@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "./dist/",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "target": "ESNEXT",
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "./src/**/*"
+, "back/index.tsx"  ]
+}

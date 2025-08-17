@@ -1,0 +1,86 @@
+{
+  "documentTitle": "About VisionY",
+  "pageTitle": "# About VisionY",
+  "lastUpdated": "**Last Updated: June 1, 2025**",
+  "introduction": {
+    "p1": "Welcome to VisionY! We are an AI-native online creation platform dedicated to transforming your scripts into captivating storyboards using cutting-edge artificial intelligence technology, while offering flexible parameter editing to seamlessly bring your creative ideas to life. Our vision is: **AI Makes Creativity Visible**.",
+    "p2": "VisionY is built by a passionate team, combining proprietary and third-party AI technologies, including large language models (LLMs), AI image generation, AI video generation, AI background music generation, AI ambient sound generation, and AI text-to-speech (TTS) technology. We provide a one-stop tool for creators in fields such as film, animation, advertising, and gaming to express their creativity."
+  },
+  "sections": {
+    "s1_ourMission": {
+      "title": "## 1. Our Mission",
+      "intro": "Our mission is to empower creators through artificial intelligence, enabling everyone to effortlessly transform written stories into visualized storyboard content, breaking down technical and resource barriers in creation.",
+      "listItems": [
+        "**Spark Creativity:** Utilize AI technology to quickly convert complex scripts into intuitive storyboard sketches and audiovisual content.",
+        "**Enhance Efficiency:** Save time through automated storyboard generation, audio-visual integration, and parameter adjustments, allowing you to focus on storytelling.",
+        "**Empower Diversity:** Support a wide range of users, from professional directors to independent creators, helping creators from diverse backgrounds realize their visions."
+      ]
+    },
+    "s2_whatWeDo": {
+      "title": "## 2. What We Do",
+      "intro": "VisionY is an AI-driven creation platform focused on transforming scripts into storyboards, with robust parameter editing capabilities to meet diverse creative needs. Our core features include:",
+      "listItems": [
+        "**Script Analysis and Storyboard Generation:** Powered by large language models (LLMs), automatically generate storyboard sketches, scene descriptions, and shot composition suggestions from scripts.",
+        "**AI Image and Video Generation:** Use AI image and video generation technologies to create high-quality visual content, bringing scenes and characters from scripts to life.",
+        "**AI Audio Generation:** Provide AI-generated background music, ambient sound effects, and text-to-speech (TTS) voices to enhance the audiovisual experience of storyboards.",
+        "**Parameterized Editing:** Allow users to adjust camera angles, lighting effects, scene moods, music styles, and more to create personalized creative outputs.",
+        "**Multi-Scenario Support:** Suitable for various creative scenarios, including film, animation, advertising, and gaming, meeting cross-industry needs."
+      ]
+    },
+    "s3_ourTechnology": {
+      "title": "## 3. Our Technology",
+      "intro": "VisionY combines proprietary and third-party technologies to create a powerful and flexible creation tool, covering the full spectrum of text, image, video, and audio generation.",
+      "subsections": {
+        "s3_1_aiCore": {
+          "title": "### 3.1 AI Core Technology",
+          "p1": "We leverage proprietary and third-party large language models (LLMs) to accurately analyze narrative structures, emotional tones, and scene descriptions in scripts, generating storyboard content that aligns with creators' intentions. Combined with AI image and video generation technologies, we transform text into high-quality visual outputs, balancing artistry and accuracy."
+        },
+        "s3_2_audioGeneration": {
+          "title": "### 3.2 AI Audio Generation",
+          "p1": "VisionY integrates AI background music generation, AI ambient sound generation, and AI text-to-speech (TTS) technologies to add immersive audio experiences to storyboards. From epic background music to realistic ambient sound effects and natural, fluent character dialogue, our audio generation technology enhances content expressiveness."
+        },
+        "s3_3_customization": {
+          "title": "### 3.3 Parameterized Customization",
+          "p1": "We provide an intuitive parameter editing interface, enabling users to fine-tune AI-generated visual and audio content, including camera angles, scene tones, music tempo, and voice intonation, ensuring outputs fully align with your creative needs."
+        },
+        "s3_4_cloudIntegration": {
+          "title": "### 3.4 Cloud Collaboration",
+          "p1": "VisionY supports cloud storage and real-time collaboration, allowing you to access your projects anytime, anywhere. Team members can co-edit and review storyboard content, streamlining the creative process."
+        }
+      }
+    },
+    "s4_ourTeam": {
+      "title": "## 4. Our Team",
+      "intro": "VisionY is built by an interdisciplinary team of AI experts, audiovisual content creators, designers, and technology innovators.",
+      "listItems": [
+        "**Technology Pioneers:** Our AI engineers focus on developing and optimizing LLMs, image generation, video generation, and audio generation technologies, driving the fusion of creativity and technology.",
+        "**Creative Advisors:** Our team includes experienced screenwriters, directors, and sound designers, ensuring the tool meets professional audiovisual creation needs.",
+        "**User Experience Experts:** Our designers create intuitive, user-friendly interfaces, enabling every user to easily get started and unleash their creativity."
+      ],
+      "p1": "We come from around the world, united by a shared passion for technology and art, committed to making VisionY the go-to tool for creators globally."
+    },
+    "s5_ourValues": {
+      "title": "## 5. Our Values",
+      "intro": "At VisionY, we adhere to the following core values to guide our product development and services:",
+      "listItems": [
+        "**User-Centric:** Prioritize user needs, continuously optimizing product features and experiences.",
+        "**Innovation-Driven:** Combine proprietary and third-party technologies to explore the limitless possibilities of AI in audiovisual creation.",
+        "**Inclusive and Open:** Enable creators of all backgrounds and experience levels to tell their stories through VisionY.",
+        "**Responsibility and Transparency:** Strictly protect user privacy and data security, comply with relevant laws and regulations, and earn user trust."
+      ]
+    },
+    "s6_ourVision": {
+      "title": "## 6. Our Vision",
+      "p1": "Our vision is **AI Makes Creativity Visible**. We believe artificial intelligence is not just a tool but a catalyst for igniting creative sparks. VisionY is dedicated to breaking down technical barriers in creation by integrating LLMs, AI image generation, AI video generation, and AI audio generation technologies, enabling every creator to transform their stories into compelling audiovisual content.",
+      "p2": "In the future, we will continue to expand VisionY’s capabilities, developing more AI-driven creation tools to cover the entire process from scriptwriting to final output, building a globally leading creative platform."
+    },
+    "s7_contactUs": {
+      "title": "## 7. Contact Us",
+      "intro": "We welcome your feedback, suggestions, or partnership inquiries! If you have any questions about VisionY or want to learn more, please reach out to us via:",
+      "contactInfo": [
+        "VisionY Team",
+        "Email: contact@visiony.ai"
+      ]
+    }
+  }
+}

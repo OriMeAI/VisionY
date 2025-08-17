@@ -1,0 +1,20 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <!-- 定义遮罩 -->
+  <defs>
+    <mask id="hollowRect">
+      <!-- 白色表示可见区域，黑色表示不可见区域 -->
+      <rect x="0" y="0" width="180" height="180" fill="white"/>
+      <!-- 中间挖空的部分 -->
+      <rect x="30" y="30" width="120" height="120" rx="12" fill="black"/>
+    </mask>
+  </defs>
+  
+  <!-- 应用遮罩的外部矩形 -->
+  <rect x="0" y="0" width="180" height="180" rx="24" fill="#7E2FFF" mask="url(#hollowRect)"/>
+  
+  <!-- 内部紫色小正方形 -->
+  <rect x="60" y="60" width="60" height="60" rx="6" fill="#7E2FFF"/>
+
+  <!-- 小圆点 -->
+  <circle cx="130" cy="50" r="12" fill="#7E2FFF"/>
+</svg>

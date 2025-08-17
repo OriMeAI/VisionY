@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VisionY turns scripts into professional storyboards with one click, unleashing your creative potential.">
+    <meta name="keywords" content="AI storyboard, AI script generation, storyboard tool, AI filmmaking, script visualization, VisionY">
+    <link rel="icon" href="/favicon.ico">
+    <meta property="og:title" content="VisionY">
+    <meta property="og:description" content="AI makes creativity visible, generating storyboards quickly.">
+    <meta property="og:image" content="https://placehold.co/1200x630/7E2FFF/ffffff?text=VisionY+OG">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.visiony.ai/cn">
+    <link rel="alternate" hreflang="zh-TW" href="https://www.visiony.ai/tw">
+    <link rel="alternate" hreflang="en-US" href="https://www.visiony.ai/en">
+    <link rel="alternate" hreflang="ja-JP" href="https://www.visiony.ai/ja">
+    <link rel="alternate" hreflang="x-default" href="https://www.visiony.ai">
+
+    <title>AI Makes Creativity Visible - VisionY</title>
+
+    <script>
+        const LANGUAGE_KEY = 'language';
+        const SUPPORTED_LANGUAGES = {
+            'en-US': { value: 'en', label: 'English' },
+            'zh-CN': { value: 'cn', label: '简体中文' },
+            'zh-TW': { value: 'tw', label: '繁體中文' },
+            'ja-JP': { value: 'ja', label: '日本語' },
+        };
+        function getBrowserLanguage() {
+            const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
+            if (savedLanguage && SUPPORTED_LANGUAGES[savedLanguage]) {
+                return savedLanguage;
+            }
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (SUPPORTED_LANGUAGES[browserLang]) {
+                return browserLang;
+            }
+            return 'en-US';
+        }
+        const CURRENT_LANGUAGE = 'en-US';
+        const userLanguage = getBrowserLanguage();
+        if (userLanguage !== CURRENT_LANGUAGE) {
+            localStorage.setItem(LANGUAGE_KEY, userLanguage);
+            window.location.href = SUPPORTED_LANGUAGES[userLanguage].value;
+        } else {
+            localStorage.setItem(LANGUAGE_KEY, userLanguage);
+        }
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17469080040"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17469080040');
+</script>
+</head>
+
+<body class="font-sans text-brand-text bg-white overflow-x-hidden">
+
+    <header class="bg-white/95 backdrop-blur-sm shadow-md sticky top-0 z-50 w-full">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-[75px]">
+            <div class="flex items-center">
+                <div class="mr-2">
+                    <img src="/home/static/assets/visiony_logo_transparent_180.svg" alt="VisionY Logo" width="40" height="40" class="logo-icon">
+                </div>
+                <div class="logo text-2xl font-bold text-primary">VisionY</div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 nav-links-desktop">
+                <a href="https://github.com/OriMeAI/VisionY" target="_blank" class="text-brand-dark font-medium hover:text-primary transition-colors flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    GitHub
+                </a>
+                <div class="relative">
+                    <select id="language-selector"></select>
+                </div>
+                <a href="/login" class="bg-primary text-white py-2 px-5 rounded-lg font-medium hover:bg-primary-darker transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">Workspace</a>
+            </div>
+            <button class="md:hidden mobile-nav-toggle text-2xl text-brand-dark focus:outline-none" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </nav>
+        <div class="nav-links-mobile hidden md:hidden absolute top-[75px] left-0 w-full bg-brand-light backdrop-blur-sm shadow-lg flex-col items-center py-4 space-y-4">
+            <a href="https://github.com/OriMeAI/VisionY" target="_blank" class="text-brand-dark font-medium hover:text-primary transition-colors flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                GitHub
+            </a>
+            <div class="relative">
+                <select id="mobile-language-selector"></select>
+            </div>
+            <a href="/login" class="bg-primary text-white py-2 px-6 rounded-lg font-medium hover:bg-primary-darker transition-colors">Workspace</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="text-white py-20 md:py-28 min-h-[90vh] flex flex-col justify-center items-center text-center relative">
+            <div class="absolute inset-0 w-full h-full bg-black backdrop-blur-sm"></div>
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-shadow-md animate-on-scroll animate-fade-in">AI Makes Creativity Visible</h1>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto mb-10 text-white/90 leading-relaxed animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;">Transform your script ideas into professional storyboards with one click, empowering your filmmaking and letting your imagination soar.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-on-scroll animate-fade-in" style="transition-delay: 0.4s;">
+                    <a href="/login" class="px-8 py-3 rounded-lg font-semibold text-lg btn-primary transform hover:scale-105">Free Trial</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="value" class="py-16 md:py-20 bg-brand-light">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-dark animate-on-scroll animate-fade-in">Empowering Every Creator</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="value-item bg-white p-8 rounded-lg shadow-lg border-l-4 border-primary hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 animate-on-scroll animate-slide-in-left">
+                        <h4 class="text-xl font-semibold mb-2 text-brand-dark"><span class="text-primary font-bold">Efficiency</span> Boost, Creation Accelerated</h4>
+                        <p class="text-brand-text text-sm leading-relaxed">Say goodbye to manual drawing and tedious parameter settings, reducing days of work to minutes, so you can focus on refining your creative vision.</p>
+                    </div>
+                    <div class="value-item bg-white p-8 rounded-lg shadow-lg border-l-4 border-secondary hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 animate-on-scroll animate-slide-in-right" style="transition-delay: 0.1s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.1s'">
+                        <h4 class="text-xl font-semibold mb-2 text-brand-dark"><span class="text-secondary font-bold">Cost</span> Reduction, Within Reach</h4>
+                        <p class="text-brand-text text-sm leading-relaxed">No need for expensive professional storyboard artists, significantly lowering pre-production costs, ideal for independent creators, students, and small teams.</p>
+                    </div>
+                    <div class="value-item bg-white p-8 rounded-lg shadow-lg border-l-4 border-accent hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 animate-on-scroll animate-slide-in-left" style="transition-delay: 0.2s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.2s'">
+                        <h4 class="text-xl font-semibold mb-2 text-brand-dark"><span class="text-accent font-bold">Seamless</span> Communication, Smooth Collaboration</h4>
+                        <p class="text-brand-text text-sm leading-relaxed">Clear, standardized storyboard outputs make it easy for team members (directors, cinematographers, artists) to understand creative intent, boosting collaboration efficiency.</p>
+                    </div>
+                    <div class="value-item bg-white p-8 rounded-lg shadow-lg border-l-4 border-red-500 hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 animate-on-scroll animate-slide-in-right" style="transition-delay: 0.3s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.3s'">
+                        <h4 class="text-xl font-semibold mb-2 text-brand-dark"><span class="text-red-500 font-bold">Creativity</span> Amplified, Inspiration Unleashed</h4>
+                        <p class="text-brand-text text-sm leading-relaxed">Quickly visualize scripts, intuitively feel the story’s rhythm and visual presentation, sparking more creative ideas and refining visual plans early on.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-16 md:py-20 bg-white">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-dark animate-on-scroll animate-fade-in">Unleash Creative Potential</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="feature-item bg-white p-8 rounded-lg shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 text-center animate-on-scroll animate-fade-in">
+                        <div class="text-5xl text-primary mb-5 mx-auto">📝</div>
+                        <h3 class="text-xl font-semibold mb-3 text-brand-dark">Intelligent Script Analysis</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">Upload your script, and AI automatically identifies scenes, characters, actions, and dialogue, laying a solid foundation for storyboard generation.</p>
+                    </div>
+                    <div class="feature-item bg-white p-8 rounded-lg shadow-lg hover:shadow-primary/20 hover:-translate-y-2
+                        transition-all duration-300 text-center animate-on-scroll animate-fade-in" style="transition-delay: 0.1s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.1s'">
+                        <div class="text-5xl text-primary mb-5 mx-auto">💡</div>
+                        <h3 class="text-xl font-semibold mb-3 text-brand-dark">AI Storyboard Image Generation</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">Based on script descriptions, AI intelligently generates context-appropriate storyboard images, bringing your ideas to life.</p>
+                    </div>
+                    <div class="feature-item bg-white p-8 rounded-lg shadow-lg hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 text-center animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.2s'">
+                        <div class="text-5xl text-primary mb-5 mx-auto">📷</div>
+                        <h3 class="text-xl font-semibold mb-3 text-brand-dark">Professional Shot Attributes</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">Automatically annotates each storyboard with shot type, camera angle, movement, and duration suggestions, matching professional standards.</p>
+                    </div>
+                    <div class="feature-item bg-white p-8 rounded-lg shadow-lg hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 text-center animate-on-scroll animate-fade-in" style="transition-delay: 0.3s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.3s'">
+                        <div class="text-5xl text-primary mb-5 mx-auto">✏️</div>
+                        <h3 class="text-xl font-semibold mb-3 text-brand-dark">Flexible Adjustments and Export</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">Easily tweak AI-generated image descriptions and shot parameters, and export in multiple common formats to seamlessly integrate with your workflow.</p>
+                    </div>
+                </div>
+                <div class="mt-8 max-w-4xl mx-auto animate-on-scroll animate-fade-in relative" style="transition-delay: 0.2s;"> 
+                    <img src="/home/static/assets/index_shot.jpg" alt="shots" loading="lazy" class="w-full rounded-md">
+                </div>
+            </div>
+        </section>
+
+        <section id="visual-mode" class="py-16 md:py-20 bg-brand-light">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-dark animate-on-scroll animate-fade-in"><span class="text-primary ml-2">Immersive Visual</span> Experience</h2>
+                <div class="flex flex-col items-center gap-8 md:gap-12"> 
+                    <div class="visual-mode-text w-full text-center transition-all duration-300 animate-on-scroll animate-fade-in"> 
+                        <p class="text-brand-text mb-6 leading-relaxed">Our brand-new visual mode offers an unprecedented storyboard browsing and editing experience. In a what-you-see-is-what-you-get interface, you can:</p> 
+                        <ul class="space-y-3 text-brand-text custom-list mb-6 text-left mx-auto max-w-2xl pl-5"> 
+                            <li>View AI-generated storyboard frames more clearly.</li> 
+                            <li>Adjust image descriptions, character actions, and emotions in real-time.</li> 
+                            <li>Easily modify professional parameters like shot type, camera angle, movement, and duration.</li> 
+                            <li>Quickly navigate and manage your storyboard list.</li> 
+                        </ul> 
+                        <p class="text-brand-text leading-relaxed">AI makes creativity not only visible but also manageable. Visual mode helps you precisely refine every shot, making storytelling smoother and boosting creative efficiency.</p> 
+                    </div> 
+                    <div class="visual-mode-image w-full transition-all duration-300 animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;"> 
+                        <div class="w-full h-auto bg-slate-200 rounded-lg flex justify-center items-center text-center p-1 text-primary-darker mx-auto relative"> 
+                            <img src="/home/static/assets/index_screen_en.jpg" alt="visual-mode" loading="lazy" class="w-full h-auto rounded-md"> 
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-16 md:py-20 bg-white">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-dark animate-on-scroll animate-fade-in">Ignite Your Creative Spark</h2>
+                <div class="flex flex-col md:flex-row justify-center md:justify-around items-center md:items-start gap-8 md:gap-4">
+                    <div class="step flex-1 text-center p-6 bg-white rounded-lg animate-on-scroll animate-fade-in">
+                        <div class="w-14 h-14 bg-primary text-white rounded-full flex justify-center items-center text-2xl font-bold mx-auto mb-5 shadow-md shadow-primary/30">1</div>
+                        <h3 class="text-xl font-semibold mb-2 text-brand-dark">Upload Script</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">Supports multiple text formats or direct pasting, easily importing your creative blueprint.</p>
+                    </div>
+                    <div class="step-arrow text-3xl text-primary self-center hidden md:block mx-4 transform md:rotate-0 rotate-90 animate-on-scroll animate-fade-in" style="transition-delay: 0.15s;">→</div>
+                    <div class="step flex-1 text-center p-6 bg-white rounded-lg animate-on-scroll animate-fade-in" style="transition-delay: 0.3s;">
+                        <div class="w-14 h-14 bg-primary text-white rounded-full flex justify-center items-center text-2xl font-bold mx-auto mb-5 shadow-md shadow-primary/30">2</div>
+                        <h3 class="text-xl font-semibold mb-2 text-brand-dark">AI Processing</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">Our powerful AI engine quickly analyzes, breaks down, and generates initial storyboards with detailed parameters.</p>
+                    </div>
+                    <div class="step-arrow text-3xl text-primary self-center hidden md:block mx-4 transform md:rotate-0 rotate-90 animate-on-scroll animate-fade-in" style="transition-delay: 0.45s;">→</div>
+                    <div class="step flex-1 text-center p-6 bg-white rounded-lg animate-on-scroll animate-fade-in" style="transition-delay: 0.6s;">
+                        <div class="w-14 h-14 bg-primary text-white rounded-full flex justify-center items-center text-2xl font-bold mx-auto mb-5 shadow-md shadow-primary/30">3</div>
+                        <h3 class="text-xl font-semibold mb-2 text-brand-dark">Review and Optimize</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">Instantly preview storyboard panels, make personalized adjustments online, and export perfect results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-20 md:py-28 bg-gradient-to-br from-primary to-secondary text-white">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-shadow animate-on-scroll animate-fade-in">Ready to Let Your Creativity Shine?</h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/90 animate-on-scroll animate-fade-in" style="transition-delay: 0.15s;">Experience how AI revolutionizes your storyboard creation process, making every great story vividly clear!</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-on-scroll animate-fade-in" style="transition-delay: 0.3s;">
+                    <a href="/login" class="bg-white text-primary py-4 px-10 rounded-lg text-lg font-bold hover:bg-primary hover:text-white transition-colors">Start Your Creative Journey</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark text-slate-400 py-10">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center items-center space-x-6 mb-6">
+                <a href="https://discord.gg/CBaZPDjWEn" target="_blank" rel="noopener noreferrer" aria-label="Discord" class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Discord</title>
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4404.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1679-.3847-.3973-.8742-.6083-1.2495a.0741.0741 0 00-.0785-.0371 19.7363 19.7363 0 00-4.8851 1.5152.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5779.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.227-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.278-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0941.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0106c3.9278 1.7933 8.18 1.7933 12.0614 0a.0743.0743 0 01.0776.0106c.1201.0991.246.1973.3718.2914a.077.077 0 01-.0076.1277c-.5942.3428-1.2194.6447-1.8722.8923a.076.076 0 00-.0416.1057c.3539.699.7654 1.3638 1.227 1.9942a.0777.0777 0 00.0842.0276c1.9516-.6067 3.9401-1.5219 5.9929-3.0294a.0824.0824 0 00.0312-.0561c.5004-4.3802-.3265-8.9762-2.6054-13.6602a.0699.0699 0 00-.0321-.0277zM8.0201 15.3312c-.7804 0-1.4162-.8163-1.4162-1.8229 0-1.0066.6358-1.823 1.4162-1.823.7804 0 1.4161.8163 1.4161 1.823 0 1.0066-.6357 1.8229-1.4161 1.8229zm7.9748 0c-.7804 0-1.4162-.8163-1.4162-1.8229 0-1.0066.6358-1.823 1.4162-1.823.7804 0 1.4162.8163 1.4162 1.823 0 1.0066-.6358 1.8229-1.4162 1.8229Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.x.com/VisionY_AI" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>X/Twitter</title>
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@VisionY_AI" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Youtube</title>
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <!-- <a href="https://www.tiktok.com/@visiony_ai" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                        <title>Tiktok</title>
+                        <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
+                    </svg>
+                </a> -->
+                <a href="https://www.instagram.com/visiony_ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                    class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm">© <span id="currentYear"></span> Orime. All rights reserved.</p>
+            <p class="text-xs mt-4">
+                <a href="/termsofuse" target="_blank" class="hover:text-secondary transition-colors">Terms of Use</a> |
+                <a href="/privacypolicy" target="_blank" class="hover:text-secondary transition-colors">Privacy Policy</a> |
+                <a href="/aboutus" target="_blank" class="hover:text-secondary transition-colors">About Us</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

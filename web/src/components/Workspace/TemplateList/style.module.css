@@ -1,0 +1,49 @@
+.templateListWrapper :global .ant-carousel .slick-prev,
+.templateListWrapper :global .ant-carousel .slick-next {
+  width: 32px;
+  height: 32px;
+  pointer-events: auto;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  padding: 0.5rem;
+  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
+  &:disabled {
+    opacity: 0.4;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
+
+.templateListWrapper :global .ant-carousel .slick-prev::after,
+.templateListWrapper :global .ant-carousel .slick-next::after {
+  display: none;
+}
+.templateListWrapper :global .ant-carousel .slick-prev {
+  margin-left: -10px;
+}
+.templateListWrapper :global .ant-carousel .slick-next {
+  margin-right: -10px;
+}
+.templateListWrapper :global .ant-carousel {
+  padding: 0 10px;
+  flex-shrink: 0; /* 防止被压缩 */
+}
+.swiperButtonDisabled,
+.swiperButtonLock {
+  cursor: not-allowed;
+  border-color: #d9d9d9;
+  color: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.04);
+  box-shadow: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .swiperButtonDisabled,
+  .swiperButtonLock {
+    background: rgba(0, 0, 0, 0.04) !important;
+  }
+}

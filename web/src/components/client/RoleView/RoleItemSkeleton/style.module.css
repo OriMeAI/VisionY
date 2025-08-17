@@ -1,0 +1,10 @@
+.roleItemSkeletonWrapper {
+  .skeletonImage {
+    width: 152px !important;
+    height: 270px !important;
+  }
+  .skeletonFigureName {
+    width: 5rem !important;
+    height: 1rem !important;
+  }
+}

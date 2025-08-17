@@ -1,0 +1,4 @@
+/* ✅ 保证 Modal 居中、去除动画源 */
+.confirmWrapper :global(.ant-modal) {
+  transform-origin: center center !important; /* 或 unset，看是否还需动画 */
+}

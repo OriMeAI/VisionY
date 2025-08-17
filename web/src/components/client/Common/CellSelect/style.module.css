@@ -1,0 +1,23 @@
+/* 选择框居中 */
+.centeredSelect .ant-select-selector {
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* 已选项居中 */
+.centeredSelect .ant-select-selection-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+/* 下拉菜单选项居中 */
+.centeredSelectDropdown .ant-select-item-option-content {
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}

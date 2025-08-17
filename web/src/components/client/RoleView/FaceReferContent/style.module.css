@@ -1,0 +1,4 @@
+.faceReferContentWrapper :global .ant-upload-list-picture-card {
+    display: flex;
+    flex-direction: column-reverse;
+}

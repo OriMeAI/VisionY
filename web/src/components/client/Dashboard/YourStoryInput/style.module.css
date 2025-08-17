@@ -1,0 +1,3 @@
+.yourStoryInputWrapper :global .ant-btn-default:hover {
+    border-color: rgb(209 213 219) !important;
+}

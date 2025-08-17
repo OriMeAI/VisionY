@@ -1,0 +1,14 @@
+.createNewFormWrapper :global .ant-form-item-control {
+  flex: auto;
+}
+.pictureSizeItem :global .ant-btn {
+  padding: 4px 15px;
+}
+
+.pictureSizeItem :global .ant-btn:hover {
+  background-color: #f0f2f5 !important;
+}
+
+.createNewFormWrapper :global .ant-btn-variant-outlined:disabled {
+  background-color: transparent !important;
+}

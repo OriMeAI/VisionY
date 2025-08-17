@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义 CSS */
+html,body {
+    scroll-behavior: smooth;
+    bacground-color: #FFFFFF;
+}
+
+/* Firefox 兼容性 */
+html,
+body,
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* 确保滚动条样式优先级 */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 3px !important;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 3px !important;
+    transition: background 0.2s ease-in-out !important;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 自定义列表标记 */
+.custom-list li::before {
+    content: '✓';
+    color: #50E3C2; /* secondary color */
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+/* 主要按钮样式 */
+.btn-primary {
+    background-color: #7E2FFF;
+    border: 1px solid #7E2FFF;
+    color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #6a1eda;
+    border-color: #6a1eda;
+}
+
+/* 滚动动画基础类 */
+.animate-on-scroll {
+    opacity: 0;
+    /* 动画持续时间调整为 0.8s */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animate-fade-in {
+    opacity: 0;
+    /* Y轴位移调整为 25px */
+    transform: translateY(25px);
+}
+.animate-slide-in-left {
+    opacity: 0;
+    /* X轴位移调整为 -75px */
+    transform: translateX(-25px);
+}
+.animate-slide-in-right {
+    opacity: 0;
+    /* X轴位移调整为 75px */
+    transform: translateX(25px);
+}
+.is-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0); /* 动画目标状态 */
+}
+
+/* Choices.js 容器样式 */
+.choices {
+    margin-bottom: 25px; /* 增加与其他元素的间距 */
+    border-radius: 8px; /* 圆角 */
+    width: 120px; /* 将选择器的宽度设置为 150px */
+}
+
+.choices__inner {
+    background-color: rgba(255, 255, 255, 0.95) !important;  /*等同于bg-white/95 */
+    /*background-color: white;#f9fafb;  输入框内部背景色 */
+    border: 1px solid #d1d5db !important; /* 默认边框颜色恢复为 #d1d5db */
+    border-radius: 8px !important; /* 圆角 */
+    font-size: 1rem !important;
+    transition: border-color 0.2s ease-in-out; 
+    padding-top:6px !important;
+    
+    /* 高度调整和垂直居中 */
+    height: 30px; 
+    /*padding: 0 15px;  左右内边距，为箭头和文本边缘留出空间 */
+    display: flex;
+    align-items: center; /* 垂直居中内部元素 (文本和箭头) */
+}
+
+/* 新增：鼠标悬停时边框颜色变为 #7E2FFF */
+.choices__inner:hover {
+    border-color: #7E2FFF !important;
+}
+
+/* 规则：确保下拉框打开时，输入框的圆角保持不变，边框颜色变为 #7E2FFF */
+.choices.is-open[data-type*='select-one'] .choices__inner {
+    border-radius: 8px; /* 强制所有圆角为8px */
+    border-color: #7E2FFF  !important; /* 下拉框打开时边框颜色 */
+    /*color: #7E2FFF;*/
+}
+
+/* 包含选中项文本的容器 */
+.choices__list--single {
+    flex-grow: 1; /* 占据 .choices__inner 内的可用空间 */
+    overflow: hidden; /* 防止内部内容溢出影响布局，配合 ellipsis */
+    display: flex; /* 将其设为 flex 容器 */
+    align-items: center; /* 使其子元素（.choices__item）垂直居中 */
+    justify-content: center; /* 使其子元素（.choices__item）水平居中 */
+}
+
+/* 选中的文本项 */
+.choices__list--single .choices__item {
+    /* display: inline-block;  不再需要，因为父元素是 flex 容器 */
+    /* vertical-align: middle; 不再需要，因为父元素是 flex 容器 */
+    max-width: 100%; /* 确保不超过其父容器的宽度 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.choices__list--dropdown {
+    border-bottom-left-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
+    border-radius: 6px; /* 下拉列表圆角 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* 下拉列表阴影 */
+    margin-top: 6px !important; /* 将与输入框的间距调整为 4px */
+    border: none !important;
+}
+
+.choices__item--selectable {
+    /*padding: 12px 15px;  选项内边距 */
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* 平滑过渡效果 */
+
+    /* 新增：使下拉框条目在文本过长时显示省略号 */
+    display: block; /* 确保 text-overflow 生效 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.choices__item--selectable.is-highlighted {
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+.choices__item.choices__item--choice.choices__item--selectable:hover {
+    background-color: #f2f2f2 !important; /* #f2f2f2 悬停时的背景色 */
+    color: inherit !important; /* 悬停时的文字颜色 */
+}
+
+.choices__item--selectable.is-selected {
+    background-color: #EDE9FE !important;  /* #3b82f6;  Tailwind blue-500 */
+    color: #7E2FFF !important;
+}

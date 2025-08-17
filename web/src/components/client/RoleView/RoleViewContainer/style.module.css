@@ -1,0 +1,21 @@
+.loadingModal :global(.ant-modal-footer) {
+    padding: 0;
+}
+
+.dotsAnimation {
+    display: inline-block;
+    width: 24px; /* 设置一个固定宽度，根据需要调整 */
+    text-align: left; /* 让点从左侧开始显示 */
+    }
+
+.dotsAnimation:after {
+    content: '';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}

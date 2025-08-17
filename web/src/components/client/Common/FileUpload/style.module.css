@@ -1,0 +1,5 @@
+.fileUploadWrapper :global .ant-upload {
+    width: 100% !important;
+    background-color: transparent !important;
+    border: none !important;
+}

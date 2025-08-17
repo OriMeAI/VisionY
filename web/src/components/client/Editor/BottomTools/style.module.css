@@ -1,0 +1,17 @@
+.bottomTools {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.textInput {
+  width: 320px;
+}
+
+.repaintBtn {
+  min-width: 120px;
+}

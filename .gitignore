@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+/node_modules
+/nginx/
+/*/node_modules
+node_modules/
+
+.local
+
 #logs
 logs/
 
@@ -16,10 +23,9 @@ logs/
 /test.py
 /shots.json
 /shots.py
+/shots.html
+/shots.*
 test/
-
-#nginx配置
-nginx_back.conf
 
 .trae
 .vscode
@@ -29,7 +35,6 @@ nginx_back.conf
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -147,7 +152,10 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+app_config
 .env
+.env.local
+.env.*.local
 .venv
 env/
 venv/
@@ -192,40 +200,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-# dependencies
-/node_modules
-/*/node_modules
-/.pnp
-.pnp.js
-/.next
-/*/.next
-
-# testing
-/coverage
-
-somerecord.log
-
-# production
-/build
-/*/build
-/dist
-/*/dist
-
-# notes
-notes/*.md
-
-# misc
-.DS_Store
-.eslintcache
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# vscode
-.vscode
+# 前端构建产物
+web/dist/

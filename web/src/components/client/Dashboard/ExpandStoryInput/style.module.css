@@ -1,0 +1,4 @@
+.expandStoryInputWrapper :global .ant-btn-color-primary.ant-btn-background-ghost:disabled {
+    color: #ffffff !important;
+    background: linear-gradient(to right, #7873f5, #ec77ab) !important;
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VisionY讓影視劇本一鍵生成專業分鏡，釋放你的創作潛能。">
+    <meta name="keywords" content="AI分鏡, AI劇本生成, 分鏡工具, AI影視, 劇本可視化, VisionY">
+    <link rel="icon" href="/favicon.ico">
+    <meta property="og:title" content="VisionY">
+    <meta property="og:description" content="AI讓創意可見，快速生成分鏡圖。">
+    <meta property="og:image" content="https://placehold.co/1200x630/7E2FFF/ffffff?text=VisionY+OG">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.visiony.ai/cn">
+    <link rel="alternate" hreflang="zh-TW" href="https://www.visiony.ai/tw">
+    <link rel="alternate" hreflang="en-US" href="https://www.visiony.ai/en">
+    <link rel="alternate" hreflang="ja-JP" href="https://www.visiony.ai/ja">
+    <link rel="alternate" hreflang="x-default" href="https://www.visiony.ai">
+
+    <title>AI讓創意可見 - VisionY</title>
+
+    <script>
+        const LANGUAGE_KEY = 'language';
+        const SUPPORTED_LANGUAGES = {
+            'en-US': { value: 'en', label: 'English' },
+            'zh-CN': { value: 'cn', label: '简体中文' },
+            'zh-TW': { value: 'tw', label: '繁體中文' },
+            'ja-JP': { value: 'ja', label: '日本語' },
+        };
+        function getBrowserLanguage() {
+            const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
+            if (savedLanguage && SUPPORTED_LANGUAGES[savedLanguage]) {
+                return savedLanguage;
+            }
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (SUPPORTED_LANGUAGES[browserLang]) {
+                return browserLang;
+            }
+            return 'en-US';
+        }
+        const CURRENT_LANGUAGE = 'zh-TW';
+        const userLanguage = getBrowserLanguage();
+        if (userLanguage !== CURRENT_LANGUAGE) {
+            localStorage.setItem(LANGUAGE_KEY, userLanguage);
+            window.location.href = SUPPORTED_LANGUAGES[userLanguage].value;
+        } else {
+            localStorage.setItem(LANGUAGE_KEY, userLanguage);
+        }
+    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17469080040"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17469080040');
+</script>
+</head>
+
+<body class="font-sans text-brand-text bg-white overflow-x-hidden">
+
+    <header class="bg-white/95 backdrop-blur-sm shadow-md sticky top-0 z-50 w-full">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-[75px]">
+            <div class="flex items-center">
+                <div class="mr-2">
+                    <img src="/home/static/assets/visiony_logo_transparent_180.svg" alt="VisionY Logo" width="40" height="40" class="logo-icon">
+                </div>
+                <div class="logo text-2xl font-bold text-primary">VisionY</div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 nav-links-desktop">
+                <a href="https://github.com/OriMeAI/VisionY" target="_blank" class="text-brand-dark font-medium hover:text-primary transition-colors flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    GitHub
+                </a>
+                <div class="relative">
+                    <select id="language-selector"></select>
+                </div>
+                <a href="/login" class="bg-primary text-white py-2 px-5 rounded-lg font-medium hover:bg-primary-darker transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">工作臺</a>
+            </div>
+            <button class="md:hidden mobile-nav-toggle text-2xl text-brand-dark focus:outline-none" aria-label="Toggle navigation">
+                ☰
+            </button>
+        </nav>
+        <div class="nav-links-mobile hidden md:hidden absolute top-[75px] left-0 w-full bg-brand-light backdrop-blur-sm shadow-lg flex-col items-center py-4 space-y-4">
+            <a href="https://github.com/OriMeAI/VisionY" target="_blank" class="text-brand-dark font-medium hover:text-primary transition-colors flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                GitHub
+            </a>
+            <div class="relative">
+                <select id="mobile-language-selector"></select>
+            </div>
+            <a href="/login" class="bg-primary text-white py-2 px-6 rounded-lg font-medium hover:bg-primary-darker transition-colors">工作臺</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="text-white py-20 md:py-28 min-h-[90vh] flex flex-col justify-center items-center text-center relative">
+            <div class="absolute inset-0 w-full h-full bg-black backdrop-blur-sm"></div>
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-shadow-md animate-on-scroll animate-fade-in">AI讓創意可見</h1>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto mb-10 text-white/90 leading-relaxed animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;">將劇本創意一鍵轉化為專業分鏡，賦能您的影視創作，讓想像力自由馳騁。</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-on-scroll animate-fade-in" style="transition-delay: 0.4s;">
+                    <a href="/login" class="px-8 py-3 rounded-lg font-semibold text-lg btn-primary transform hover:scale-105">免費試用</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="value" class="py-16 md:py-20 bg-brand-light">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-dark animate-on-scroll animate-fade-in">賦能每一位創作者</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="value-item bg-white p-8 rounded-lg shadow-lg border-l-4 border-primary hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 animate-on-scroll animate-slide-in-left">
+                        <h4 class="text-xl font-semibold mb-2 text-brand-dark"><span class="text-primary font-bold">效率</span>倍增，創作加速</h4>
+                        <p class="text-brand-text text-sm leading-relaxed">告別手動繪製和繁瑣的參數設定，將數天工作量縮短至數分鐘，讓您更專注於打磨創意本身。</p>
+                    </div>
+                    <div class="value-item bg-white p-8 rounded-lg shadow-lg border-l-4 border-secondary hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 animate-on-scroll animate-slide-in-right" style="transition-delay: 0.1s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.1s'">
+                        <h4 class="text-xl font-semibold mb-2 text-brand-dark"><span class="text-secondary font-bold">成本</span>驟降，觸手可及</h4>
+                        <p class="text-brand-text text-sm leading-relaxed">無需昂貴的專業分鏡師，極大降低前期製作成本，特別適合獨立製作人、學生和小型創意團隊。</p>
+                    </div>
+                    <div class="value-item bg-white p-8 rounded-lg shadow-lg border-l-4 border-accent hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 animate-on-scroll animate-slide-in-left" style="transition-delay: 0.2s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.2s'">
+                        <h4 class="text-xl font-semibold mb-2 text-brand-dark"><span class="text-accent font-bold">溝通</span>無礙，協作順暢</h4>
+                        <p class="text-brand-text text-sm leading-relaxed">清晰、標準化的分鏡輸出，方便團隊成員（導演、攝影、美術等）精準理解創作意圖，提升協作效率。</p>
+                    </div>
+                    <div class="value-item bg-white p-8 rounded-lg shadow-lg border-l-4 border-red-500 hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 animate-on-scroll animate-slide-in-right" style="transition-delay: 0.3s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.3s'">
+                        <h4 class="text-xl font-semibold mb-2 text-brand-dark"><span class="text-red-500 font-bold">創意</span>加速，靈感迸發</h4>
+                        <p class="text-brand-text text-sm leading-relaxed">快速可視化劇本，直觀感受故事節奏與畫面呈現，激發更多創作靈感，輔助您在早期階段就打磨出更完善的視覺方案。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-16 md:py-20 bg-white">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-dark animate-on-scroll animate-fade-in">釋放創作潛能</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="feature-item bg-white p-8 rounded-lg shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 text-center animate-on-scroll animate-fade-in">
+                        <div class="text-5xl text-primary mb-5 mx-auto">📝</div>
+                        <h3 class="text-xl font-semibold mb-3 text-brand-dark">智能劇本解析</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">上傳您的文本劇本，AI將自動識別場景、角色、動作和對話，為分鏡生成奠定堅實基礎。</p>
+                    </div>
+                    <div class="feature-item bg-white p-8 rounded-lg shadow-lg hover:shadow-primary/20 hover:-translate-y-2
+                        transition-all duration-300 text-center animate-on-scroll animate-fade-in" style="transition-delay: 0.1s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.1s'">
+                        <div class="text-5xl text-primary mb-5 mx-auto">💡</div>
+                        <h3 class="text-xl font-semibold mb-3 text-brand-dark">AI分鏡畫面生成</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">根據劇本描述，AI智能生成符合情境的分鏡參考畫面，讓您的每一個奇思妙想都躍然紙上。</p>
+                    </div>
+                    <div class="feature-item bg-white p-8 rounded-lg shadow-lg hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 text-center animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.2s'">
+                        <div class="text-5xl text-primary mb-5 mx-auto">📷</div>
+                        <h3 class="text-xl font-semibold mb-3 text-brand-dark">專業鏡頭屬性</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">自動標注每個分鏡的景別、機位角度、攝影機運動方式及時長建議，媲美專業標準。</p>
+                    </div>
+                    <div class="feature-item bg-white p-8 rounded-lg shadow-lg hover:shadow-primary/20 hover:-translate-y-2 
+                        transition-all duration-300 text-center animate-on-scroll animate-fade-in" style="transition-delay: 0.3s;" onmouseover="this.style.transitionDelay='0s'" onmouseout="this.style.transitionDelay='0.3s'">
+                        <div class="text-5xl text-primary mb-5 mx-auto">✏️</div>
+                        <h3 class="text-xl font-semibold mb-3 text-brand-dark">靈活調整與匯出</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">您可以輕鬆調整AI生成的畫面描述和鏡頭參數，並匯出為多種常用格式，無縫對接您的工作流程。</p>
+                    </div>
+                </div>
+                <div class="mt-8 max-w-4xl mx-auto animate-on-scroll animate-fade-in relative" style="transition-delay: 0.2s;"> 
+                    <img src="/home/static/assets/index_shot.jpg" alt="shots" loading="lazy" class="w-full rounded-md">
+                </div>
+            </div>
+        </section>
+
+        <section id="visual-mode" class="py-16 md:py-20 bg-brand-light">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-dark animate-on-scroll animate-fade-in"><span class="text-primary ml-2">沉浸式視覺</span>體驗</h2>
+                <div class="flex flex-col items-center gap-8 md:gap-12"> 
+                    <div class="visual-mode-text w-full text-center transition-all duration-300 animate-on-scroll animate-fade-in"> 
+                        <p class="text-brand-text mb-6 leading-relaxed">我們全新的視覺模式，為您帶來前所未有的分鏡瀏覽與編輯體驗。在所見即所得的介面，您可以：</p> 
+                        <ul class="space-y-3 text-brand-text custom-list mb-6 text-left mx-auto max-w-2xl pl-5"> 
+                            <li>更清晰地查看AI生成的每一幀分鏡畫面。</li> 
+                            <li>即時調整畫面描述、角色動作與情緒。</li> 
+                            <li>便捷修改景別、機位、運鏡方式和鏡頭時長等專業參數。</li> 
+                            <li>快速導航和管理您的分鏡列表。</li> 
+                        </ul> 
+                        <p class="text-brand-text leading-relaxed">AI讓創意不僅可見，更易掌控。視覺模式助您精準打磨每一個鏡頭，讓故事表達更流暢，創作效率再升級。</p> 
+                    </div> 
+                    <div class="visual-mode-image w-full transition-all duration-300 animate-on-scroll animate-fade-in" style="transition-delay: 0.2s;"> 
+                        <div class="w-full h-auto bg-slate-200 rounded-lg flex justify-center items-center text-center p-1 text-primary-darker mx-auto relative"> 
+                            <img src="/home/static/assets/index_screen_tw.jpg" alt="visual-mode" loading="lazy" class="w-full h-auto rounded-md"> 
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="py-16 md:py-20 bg-white">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-dark animate-on-scroll animate-fade-in">點亮創意火花</h2>
+                <div class="flex flex-col md:flex-row justify-center md:justify-around items-center md:items-start gap-8 md:gap-4">
+                    <div class="step flex-1 text-center p-6 bg-white rounded-lg animate-on-scroll animate-fade-in">
+                        <div class="w-14 h-14 bg-primary text-white rounded-full flex justify-center items-center text-2xl font-bold mx-auto mb-5 shadow-md shadow-primary/30">1</div>
+                        <h3 class="text-xl font-semibold mb-2 text-brand-dark">上傳劇本</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">支援多種文本格式，或直接貼上內容，輕鬆匯入您的創作藍圖。</p>
+                    </div>
+                    <div class="step-arrow text-3xl text-primary self-center hidden md:block mx-4 transform md:rotate-0 rotate-90 animate-on-scroll animate-fade-in" style="transition-delay: 0.15s;">→</div>
+                    <div class="step flex-1 text-center p-6 bg-white rounded-lg animate-on-scroll animate-fade-in" style="transition-delay: 0.3s;">
+                        <div class="w-14 h-14 bg-primary text-white rounded-full flex justify-center items-center text-2xl font-bold mx-auto mb-5 shadow-md shadow-primary/30">2</div>
+                        <h3 class="text-xl font-semibold mb-2 text-brand-dark">AI智能處理</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">我們強大的AI引擎將快速分析、拆分並生成初步分鏡及詳細參數。</p>
+                    </div>
+                    <div class="step-arrow text-3xl text-primary self-center hidden md:block mx-4 transform md:rotate-0 rotate-90 animate-on-scroll animate-fade-in" style="transition-delay: 0.45s;">→</div>
+                    <div class="step flex-1 text-center p-6 bg-white rounded-lg animate-on-scroll animate-fade-in" style="transition-delay: 0.6s;">
+                        <div class="w-14 h-14 bg-primary text-white rounded-full flex justify-center items-center text-2xl font-bold mx-auto mb-5 shadow-md shadow-primary/30">3</div>
+                        <h3 class="text-xl font-semibold mb-2 text-brand-dark">獲取與優化</h3>
+                        <p class="text-brand-text text-sm leading-relaxed">即時預覽分鏡故事板，線上進行個人化調整與優化，匯出完美成果。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-20 md:py-28 bg-gradient-to-br from-primary to-secondary text-white">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-shadow animate-on-scroll animate-fade-in">準備好讓您的創意大放異彩了嗎？</h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-white/90 animate-on-scroll animate-fade-in" style="transition-delay: 0.15s;">感受AI如何革新您的分鏡創作流程，讓每一個好故事都清晰可見！</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-on-scroll animate-fade-in" style="transition-delay: 0.3s;">
+                    <a href="/login" class="bg-white text-primary py-4 px-10 rounded-lg text-lg font-bold hover:bg-primary hover:text-white transition-colors">開啟創意之旅</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark text-slate-400 py-10">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center items-center space-x-6 mb-6">
+                <a href="https://discord.gg/CBaZPDjWEn" target="_blank" rel="noopener noreferrer" aria-label="Discord" class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Discord</title>
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4404.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1679-.3847-.3973-.8742-.6083-1.2495a.0741.0741 0 00-.0785-.0371 19.7363 19.7363 0 00-4.8851 1.5152.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5779.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.227-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.278-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0941.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0106c3.9278 1.7933 8.18 1.7933 12.0614 0a.0743.0743 0 01.0776.0106c.1201.0991.246.1973.3718.2914a.077.077 0 01-.0076.1277c-.5942.3428-1.2194.6447-1.8722.8923a.076.076 0 00-.0416.1057c.3539.699.7654 1.3638 1.227 1.9942a.0777.0777 0 00.0842.0276c1.9516-.6067 3.9401-1.5219 5.9929-3.0294a.0824.0824 0 00.0312-.0561c.5004-4.3802-.3265-8.9762-2.6054-13.6602a.0699.0699 0 00-.0321-.0277zM8.0201 15.3312c-.7804 0-1.4162-.8163-1.4162-1.8229 0-1.0066.6358-1.823 1.4162-1.823.7804 0 1.4161.8163 1.4161 1.823 0 1.0066-.6357 1.8229-1.4161 1.8229zm7.9748 0c-.7804 0-1.4162-.8163-1.4162-1.8229 0-1.0066.6358-1.823 1.4162-1.823.7804 0 1.4162.8163 1.4162 1.823 0 1.0066-.6358 1.8229-1.4162 1.8229Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.x.com/VisionY_AI" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>X/Twitter</title>
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://www.youtube.com/@VisionY_AI" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Youtube</title>
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                <!-- <a href="https://www.tiktok.com/@visiony_ai" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                        <title>Tiktok</title>
+                        <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/>
+                    </svg>
+                </a> -->
+                <a href="https://www.instagram.com/visiony_ai" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                    class="text-slate-400 hover:text-secondary transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <title>Instagram</title>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-sm">© <span id="currentYear"></span> Orime. 版權所有.</p>
+            <p class="text-xs mt-4">
+                <a href="/termsofuse" target="_blank" class="hover:text-secondary transition-colors">使用條款</a> |
+                <a href="/privacypolicy" target="_blank" class="hover:text-secondary transition-colors">隱私政策</a> |
+                <a href="/aboutus" target="_blank" class="hover:text-secondary transition-colors">關於我們</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

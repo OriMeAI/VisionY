@@ -1,0 +1,27 @@
+
+  .shareTableViewWrapper :global(.ant-table-header) {
+    position: sticky;
+    /* top: 72px; */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .table-header-clickable {
+    cursor: default;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+  
+  .shareTableViewWrapper :global(.ant-table-container) {
+    /* top: 55px; */
+  }
+  
+  .shareTableViewWrapper :global(.ant-table-content) {
+    scrollbar-width: thin;
+    scrollbar-color: #eaeaea transparent;
+    scrollbar-gutter: stable;
+  }
+  

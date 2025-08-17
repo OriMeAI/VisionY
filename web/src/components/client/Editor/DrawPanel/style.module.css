@@ -1,0 +1,33 @@
+.drawPanelWrapper {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  /* border-radius: 10px; */
+  .cursorEnlarge {
+    cursor: zoom-in !important;
+  }
+  
+  .cursorLessen {
+    cursor: zoom-out !important;
+  }
+  .cursorGripper {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  .cursorDefault {
+    cursor: default;
+  }
+  .pointerCircleWrapper {
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+}
+

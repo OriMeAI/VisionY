@@ -1,0 +1,11 @@
+.topMenu {
+  width: calc(100% - 80px);
+  height: 40px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.topMenuLeft {
+  width: calc(100% - 224px);
+}

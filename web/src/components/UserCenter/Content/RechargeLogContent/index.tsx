@@ -1,0 +1,258 @@
+/**
+ * 用户中心权益信息组件
+ */
+import type { TableColumnsType } from "antd";
+import { Table, Tag, Button, Spin } from "antd";
+import React, { useRef, useState, useEffect, useCallback } from "react";
+import userApi from "./../../../../api/userApi";
+import {
+  RechargeRecordItemType,
+} from "./../../../../libs/interfaces";
+import { useTranslation } from "react-i18next";
+
+import {
+  IModalContexts,
+  ModalContexts,
+} from "./../../../../contexts/modal-contexts";
+
+interface IProps {}
+
+const RechargeLogContent: React.FC<IProps> = ({}) => {
+  const { t } = useTranslation();
+  const columns: TableColumnsType<RechargeRecordItemType> = [
+    {
+      title: t('recharge_time'),
+      dataIndex: "rechargeTime",
+      align: 'center',
+    },
+    {
+      title: t('service_name'),
+      dataIndex: "typeDesc",
+      align: 'center',
+    },
+    {
+      title: t('payment_amount'),
+      dataIndex: "totalAmount",
+      align: 'center',
+    },
+    {
+      title: t('order_number'),
+      dataIndex: "orderNo",
+      // align: 'center',
+      width: 200,
+    },
+    {
+      title: t('order_status'),
+      dataIndex: "rechargeStatusDesc",
+      align: 'center',
+      render: (text,record) => {
+        let color = "default";
+  
+        switch(record.rechargeStatus) {
+          case "completed":
+            color = "success";
+            break;
+          case "subscribed":
+          case "renewed":
+            color = "purple";
+            break;
+          case "failed":
+          case "canceled":
+            color = "error";
+            break;
+          case "pending":
+          case "created":
+            color = "processing";
+            break;
+          default:
+            color = "default";
+        }
+        
+        return <Tag color={color}>{text}</Tag>;
+        // if(text === "completed"){
+        //   return <Tag color={"success"}>{text}</Tag>;
+        // }
+        // return <Tag color={"error"}>{text}</Tag>;
+      },
+    },
+  ];
+
+  const [loading, setLoading] = React.useState<boolean>(false);
+  const [initialLoading, setInitialLoading] = React.useState<boolean>(true);
+  const [hasMore, setHasMore] = React.useState<boolean>(true);
+  const [records, setRecords] = React.useState<RechargeRecordItemType[]>([]);
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
+  const [pageSize] = React.useState<number>(20);
+  const modalContexts: IModalContexts = React.useContext<IModalContexts>(ModalContexts);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [tableHeight, setTableHeight] = useState(0);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // 计算表格高度
+  useEffect(() => {
+    const updateHeight = () => {
+      if (containerRef.current) {
+        const containerHeight = containerRef.current.offsetHeight;
+        const tableHeaderHeight = 55;
+        const tableFooterHeight = 54;
+        const contentMarginBottom = 0; //24;
+        const newHeight = containerHeight - tableHeaderHeight - tableFooterHeight - contentMarginBottom;
+        setTableHeight(newHeight > 0 ? newHeight : 0);
+      }
+    };
+
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
+  // 加载数据函数
+  const loadMoreData = useCallback(async (pageNum: number, isInitial = false) => {
+    if (loading || (!hasMore && !isInitial)) return;
+    
+    setLoading(true);
+    if (isInitial) setInitialLoading(true);
+    
+    try {
+      const data = await userApi.getRechargeRecordByPage({
+        pageSize: pageSize,
+        pageNum: pageNum,
+        rechargeStatus: "all", //"all" "completed" "failed" "canceled" "created"
+      });
+      
+      if (data.result?.data) {
+        const newRecords = data.result.data.records || [];
+        
+        if (pageNum === 1) {
+          setRecords(newRecords);
+        } else {
+          setRecords(prev => [...prev, ...newRecords]);
+        }
+        
+        // 更新分页状态
+        setCurrentPage(pageNum);
+        
+        // 判断是否还有更多数据
+        const total = data.result.data.total || 0;
+        setHasMore(newRecords.length === pageSize && total > pageNum * pageSize);
+      }
+    } catch (error) {
+      console.error("Load recharge log failed:", error);
+    } finally {
+      setLoading(false);
+      if (isInitial) setInitialLoading(false);
+    }
+  }, [loading, hasMore, pageSize]);
+
+  // 初始化加载第一页数据
+  useEffect(() => {
+    loadMoreData(1, true);
+  }, []);
+
+  // 滚动加载处理函数
+  const handleScroll = useCallback((e: Event) => {
+    const target = e.target as HTMLElement;
+    if (!target) return;
+    
+    // 防抖处理
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    
+    scrollTimeoutRef.current = setTimeout(() => {
+      const { scrollTop, scrollHeight, clientHeight } = target;
+      const threshold = 100; // 提前100px开始加载
+      
+      // 检查是否接近底部
+      const isNearBottom = scrollHeight - scrollTop - clientHeight < threshold;
+      
+      if (isNearBottom && !loading && hasMore) {
+        const nextPage = currentPage + 1;
+        loadMoreData(nextPage);
+      }
+    }, 150); // 150ms防抖
+  }, [loading, hasMore, currentPage, loadMoreData]);
+
+  // 监听滚动事件
+  useEffect(() => {
+    const scrollContainer = document.querySelector('.ant-table-body');
+    if (!scrollContainer) return;
+    
+    scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      scrollContainer.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [handleScroll]);
+
+  // 自定义表格底部加载提示
+  const renderFooter = () => {
+    if (loading && records.length > 0) {
+      return (
+        <div className="text-center">
+          <Spin size="small" />
+          <span className="ml-2 text-gray-500">{t('loading_more')}</span>
+        </div>
+      );
+    }
+    
+    if (!hasMore) {
+      return (
+        <div className="text-center text-gray-500">
+          {t('no_more_data')}
+        </div>
+      );
+    }
+    
+    return (
+      <div className="text-center text-gray-500">
+        {t('reach_bottom_load_more')}
+      </div>
+    );
+  };
+
+  return (
+    <div className="flex-1 flex flex-col w-full space-y-6">
+      <div className="flex justify-between items-center">
+        <div className="px-2 text-sm text-slate-600">
+          {t('recharge_log_desc')}
+        </div>
+        <Button
+          type="primary"
+          size="large"
+          variant="solid"
+          ghost={true}
+          onClick={() => {
+            modalContexts.setIsShowCreditsModal(true);
+          }}
+        >
+          <span>{t("purchase_generate_credits")}</span>
+        </Button>
+      </div>
+      
+      <div className="flex-1 flex flex-col" ref={containerRef}>
+        <Spin spinning={initialLoading} tip={t('loading_more')}>
+          <Table<RechargeRecordItemType>
+            columns={columns}
+            dataSource={records.map((record,index) => ({
+              ...record,
+              rechargeTime: new Date(record.rechargeTime).toLocaleString('sv-SE'),
+              key: record.orderNo + index,
+            }))}
+            pagination={false}
+            scroll={{ y: tableHeight }}
+            footer={renderFooter}
+            locale={{
+              emptyText: initialLoading ? '' : t('no_data'),
+            }}
+          />
+        </Spin>
+      </div>      
+    </div>
+  );
+};
+
+export default RechargeLogContent;

@@ -1,0 +1,96 @@
+version: '3'
+services:
+  app:
+    #image: python:3.9.18  # 直接使用官方Python镜像
+    build: 
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+      - ./logs:/app/logs
+    working_dir: /app  # 设置工作目录
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      - TZ=Asia/Shanghai
+      - RUNNING_IN_DOCKER=true
+    command: >
+      bash -c "exec gunicorn main:fast_app -c docker_config.py"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://app:3000/api/health"]
+    networks:
+      - storyboard_network
+
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "27017:27017"
+      # - "0.0.0.0:27017:27017"  # 绑定到所有网络接口
+    environment:
+      - TZ=Asia/Shanghai       # 保持列表项格式
+    networks:
+      - storyboard_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: storyboard_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data/redis
+    command: redis-server --appendonly yes
+    networks:
+      - storyboard_network
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html  # 挂载 web 的构建产物
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/cert:/etc/nginx/cert:ro  # 挂载证书目录
+      - ./logs/nginx:/var/log/nginx  # ← 添加日志目录挂载
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - app
+    environment:
+      - TZ=Asia/Shanghai
+    restart: always  # 关键配置：容器停止时自动重启
+    networks:
+      - storyboard_network
+
+  logrotate:
+    image: blacklabelops/logrotate
+    volumes:
+      - ./logs/nginx:/var/log/nginx
+    environment:
+      - CRON_SCHEDULE=0 0 * * *
+      - LOGROTATE_LOGFILES=/var/log/nginx/*.log
+      - LOGROTATE_FILEOWNER=root
+      - LOGROTATE_FILEGROUP=root
+      - LOGROTATE_OLDDIR=/var/log/nginx/old
+      - LOGROTATE_INTERVAL=daily
+      - LOGROTATE_COPIES=30
+      - LOGROTATE_SIZE=100M
+      - LOGROTATE_COMPRESSION=true
+      - LOGROTATE_DELAYCOMPRESSION=true
+    depends_on:
+      - nginx
+    restart: always
+    networks:
+      - storyboard_network
+
+volumes:
+  mongo-data:
+  redis_data:
+
+networks:
+  storyboard_network:
+    driver: bridge

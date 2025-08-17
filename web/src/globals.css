@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,body {
+    scroll-behavior: smooth;
+    bacground-color: #FFFFFF;
+}
+
+:root {
+  --background: #F3F5F9;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #F3F5F9;
+    --foreground: #ededed;
+  }
+}
+
+/* 分镜选中人物的头像 */
+.avatar-top-image img {
+  object-fit: contain !important;
+  object-position: center !important;
+  background-color: white;
+}
+
+/* 全局滚动条样式，包括 AntD 表格 */
+/* Firefox 兼容性 */
+html,
+body,
+*,
+.ant-table-body,
+.ant-table-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar,
+.ant-table-body::-webkit-scrollbar,
+.ant-table-container::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+}
+
+/* 滚动条轨道 */
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track,
+.ant-table-body::-webkit-scrollbar-track,
+.ant-table-container::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 3px !important;
+}
+
+/* 滚动条滑块 */
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb,
+.ant-table-body::-webkit-scrollbar-thumb,
+.ant-table-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 3px !important;
+    transition: background 0.2s ease-in-out !important;
+}
+
+/* 滑块悬停效果 */
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover,
+.ant-table-body::-webkit-scrollbar-thumb:hover,
+.ant-table-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4) !important;
+}

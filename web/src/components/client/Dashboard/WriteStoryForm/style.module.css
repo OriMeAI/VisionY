@@ -1,0 +1,7 @@
+.writeStoryFormWrapper :global .ant-segmented {
+    display: flex;
+}
+
+.writeStoryFormWrapper :global .ant-segmented-item {
+  flex: 1;
+}

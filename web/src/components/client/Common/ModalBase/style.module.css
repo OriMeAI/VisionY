@@ -1,0 +1,17 @@
+/* ✅ 保证 Modal 居中、去除动画源 */
+.modalWrapper :global(.ant-modal) {
+  transform-origin: center center !important; /* 或 unset，看是否还需动画 */
+}
+
+/* ✅ 自定义 Modal 内容尺寸 */
+.modalWrapper :global(.ant-modal-content) {
+  padding: 0 !important;
+  width: var(--modal-width) !important;
+  height: var(--modal-height) !important;
+}
+
+/* ✅ 自定义 Modal 底部样式 - 只在有内容时 */
+.modalWrapper :global(.ant-modal-footer:not(:empty)) {
+  padding: 24px !important;
+  margin-top: 0 !important;
+}

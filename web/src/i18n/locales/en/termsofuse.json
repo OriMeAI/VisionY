@@ -1,0 +1,250 @@
+{
+  "documentTitle": "VisionY Terms of Use",
+  "pageTitle": "# VisionY Terms of Use",
+  "lastUpdated": "**Effective Date: June 1, 2025**",
+  "introduction": {
+    "p1": "VisionY is an AI-powered online application (hereinafter, the “Service”) designed to assist users in splitting scripts into storyboards, generating shot descriptions, creating shot videos, and integrating background music, sound effects, and character dialogues. Our vision is “AI makes creativity visible.” The Service is operated by the VisionY team (hereinafter, “we,” “us,” or “our”).",
+    "p2": "Please read the following Terms of Use (hereinafter, the “Terms”) carefully. By accessing or using our Service, you agree to be bound by these Terms. If you do not agree to any part of these Terms, you must not access or use the Service."
+  },
+  "sections": {
+    "s1_definitions": {
+      "title": "## 1. Definitions",
+      "intro": "The following are definitions of some key terms used in these Terms:",
+      "listItems": [
+        "**“Service”** refers to the VisionY webapp and all its related features, technologies, and content, including both free and paid features.",
+        "**“User”** or **“you”** refers to the individual or entity accessing or using the Service.",
+        "**“User Input Content”** refers to any information you upload or input to use the AI features of the Service, including text prompts, images used to train or guide the AI, and other creative materials.",
+        "**“AI-Generated Content”** refers to storyboards, shot descriptions, videos, audio (including background music, sound effects, and dialogues), and any other output created through the Service using your User Input Content.",
+        "**“Membership Subscription”** refers to an arrangement where a user pays recurring fees to access specific Service privileges, features, or benefits.",
+        "**“Credits”** refer to virtual points purchased or obtained through activities, used within the Service to generate AI content or access specific features."
+      ]
+    },
+    "s2_acceptance": {
+      "title": "## 2. Acceptance of Terms",
+      "intro": "By registering an account, accessing, or using the Service, you represent and warrant that:",
+      "listItems": [
+        "You have reached the legal age of majority in your jurisdiction and are capable of entering into a binding contract.",
+        "All registration information you provide is true, accurate, current, and complete.",
+        "You will maintain the accuracy of such information.",
+        "Your use of the Service does not violate any applicable laws or regulations."
+      ]
+    },
+    "s3_serviceDescription": {
+      "title": "## 3. Service Description",
+      "intro": "VisionY uses artificial intelligence technology to automatically or assist users in performing the following based on the scripts provided:",
+      "listItems": [
+        "Splitting scripts into storyboards",
+        "Generating shot descriptions",
+        "Generating corresponding visual shots (video clips)",
+        "Integrating or generating background music, sound effects, and character dialogues (where applicable)"
+      ],
+      "p1": "The Service may include both free and paid features. Paid features may be accessed through Membership Subscriptions and/or Credit consumption. Different membership tiers may offer different Service privileges, such as project quantity limits or access to specific features. Using certain AI generation features may require consuming Credits.",
+      "p2": "We continuously improve the Service and reserve the right to modify, suspend, or terminate any or all parts of the Service at any time, with or without notice to you."
+    },
+    "s4_account": {
+      "title": "## 4. Account Registration and Security",
+      "intro": "You may need to register an account to use certain features of the Service.",
+      "listItems": [
+        "Your account features and privileges may vary depending on your Membership Subscription status and Credit balance.",
+        "You are responsible for maintaining the confidentiality of your account credentials (e.g., username and password).",
+        "You are responsible for all activities that occur under your account.",
+        "If you discover any unauthorized use of your account, please notify us immediately at `contact@visiony.ai`."
+      ]
+    },
+    "s5_userContentIP": {
+      "title": "## 5. User Content and Intellectual Property",
+      "subsections": {
+        "s5_1_userInputContent": {
+          "title": "### 5.1 User Input Content",
+          "points": {
+            "ownership": "You retain full ownership of all User Input Content you submit to the Service.",
+            "licenseToVisionY": "You grant VisionY a worldwide, non-exclusive, royalty-free, sublicensable license to host, store, reproduce, modify, create derivative works (e.g., to better adapt your content to the Service), communicate, publish (e.g., display within your account), publicly perform (within your account), publicly display (within your account), and distribute your User Input Content. This license is solely for the purpose of operating, providing, maintaining, promoting, and improving our Service, as well as developing new services, including for AI model training and improvement. This license continues even after you stop using our Service or delete your User Input Content (e.g., to comply with legal obligations or for anonymized/aggregated data used in AI model training)."
+          }
+        },
+        "s5_2_aiGeneratedContent": {
+          "title": "### 5.2 AI-Generated Content",
+          "points": {
+            "ownership": "Between you and VisionY, the AI-Generated Content created through the VisionY Service (based on your legitimate User Input Content) and its related intellectual property rights (to the extent permitted by applicable law) **belong to you**. VisionY does not claim ownership of the AI-Generated Content you create through the Service.",
+            "limitedLicenseToVisionY": "You grant VisionY a limited, non-exclusive, worldwide, royalty-free license to use, reproduce, distribute, modify (e.g., to adapt for display formats), and display your AI-Generated Content solely for the purpose of providing, maintaining, improving, and promoting the Service (e.g., showcasing your work as an example with your explicit consent or for internal service quality analysis). This license terminates when you delete the AI-Generated Content or terminate your account, although backups retained for operational needs may persist for a reasonable period, or as otherwise agreed for promotional purposes."
+          }
+        },
+        "s5_3_yourResponsibility": {
+          "title": "### 5.3 Your Responsibility",
+          "listItems": [
+            "You represent and warrant that your User Input Content and your use of AI-Generated Content will not infringe any third party’s intellectual property rights (including but not limited to copyrights, trademarks, patents), privacy rights, publicity rights, portrait rights, trade secrets, or other rights, nor contain any defamatory, discriminatory, obscene, violent, illegal, or otherwise inappropriate or offensive content.",
+            "You are solely responsible for your User Input Content and the AI-Generated Content derived from it. Any legal disputes, claims, penalties, or losses arising from your User Input Content or AI-Generated Content are your sole responsibility to address and resolve. VisionY bears no liability for such matters and reserves the right to seek recourse from you if necessary."
+          ]
+        },
+        "s5_4_visionyIP": {
+          "title": "### 5.4 VisionY’s Intellectual Property",
+          "p1": "The Service itself, including all software, code, designs, text, graphics, interfaces, trademarks, brand names (VisionY), logos, and their selection and arrangement (collectively, “VisionY Materials”), are the proprietary property of VisionY or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not reproduce, modify, distribute, sell, or license any VisionY Materials without our prior written consent."
+        }
+      }
+    },
+    "s6_aup": {
+      "title": "## 6. Acceptable Use Policy",
+      "intro": "You agree not to use the Service for any of the following activities:",
+      "listItems": [
+        "Uploading, posting, or disseminating any illegal, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another’s privacy, hateful, or racially, ethnically, or otherwise objectionable content.",
+        "Infringing any third party’s intellectual property rights, including but not limited to copyrights, trademarks, patents, or trade secrets.",
+        "Impersonating any person or entity or falsely stating or otherwise misrepresenting your affiliation with any person or entity.",
+        "Uploading or disseminating any material containing viruses, Trojan horses, worms, time bombs, or any other harmful or malicious code.",
+        "Attempting to gain unauthorized access to the Service, other accounts, computer systems, or networks connected to the Service.",
+        "Interfering with or disrupting the Service or servers or networks connected to the Service.",
+        "Violating any applicable local, state, national, or international laws or regulations.",
+        "Using the Service to generate or disseminate false or misleading information.",
+        "Using the Service for any purpose that may cause harm to individuals or groups."
+      ],
+      "p1": "We reserve the right (but have no obligation) to review any User Content or AI-Generated Content at our sole discretion and take appropriate action, including but not limited to removing content, suspending or terminating your account, and reporting to law enforcement authorities if we believe your actions violate these Terms or applicable law."
+    },
+    "s7_aiNature": {
+      "title": "## 7. Nature of AI-Generated Content",
+      "intro": "You understand and agree that:",
+      "listItems": [
+        "AI-Generated Content is based on your User Input Content and the AI models we use. The quality, accuracy, and uniqueness of the output may vary.",
+        "AI models may produce inaccurate, biased, or offensive content. We are not responsible for such outputs.",
+        "You are responsible for reviewing and verifying all AI-Generated Content to ensure it meets your needs, complies with applicable laws, and does not infringe third-party rights.",
+        "While ownership of AI-Generated Content belongs to you, due to the nature of AI-generated content, similar User Input Content may result in similar or identical outputs. We do not guarantee the uniqueness or complete originality of AI-Generated Content, as it may be influenced by training data."
+      ]
+    },
+    "s8_feesAndPayment": {
+      "title": "## 8. Fees and Payment",
+      "intro": "Certain parts or features of the Service may require payment. We offer both Membership Subscriptions and Credit purchases as payment options.",
+      "subsections": {
+        "s8_1_membership": {
+          "title": "### 8.1 Membership Subscription",
+          "points": {
+            "plan": "We may offer different tiers of Membership Subscription plans, each corresponding to different Service privileges (e.g., project quantity limits, access to advanced features, monthly Credit allowances), features, and prices. Specific plan details will be listed on the Service’s purchase page.",
+            "billingCycle": "Subscription fees will be automatically charged from your provided payment method based on the billing cycle you select (e.g., monthly, annually).",
+            "autoRenewal": "Unless you cancel your subscription at least 24 hours before the end of the current billing cycle, your Membership Subscription will automatically renew. You can manage or cancel your subscription in your account settings.",
+            "cancellation": "If you cancel your subscription, you may continue to access the corresponding membership services until the end of the current paid cycle. After cancellation, your subscription will not renew.",
+            "priceChange": "We reserve the right to adjust subscription prices at any time. Any price changes will take effect in the next billing cycle, with at least thirty (30) days’ notice to you. If you do not agree to a price change, your sole remedy is to cancel your subscription."
+          }
+        },
+        "s8_2_credits": {
+          "title": "### 8.2 Credits",
+          "points": {
+            "purchase": "You may obtain Credits by purchasing Credit packages or through certain Membership Subscription plans. Credit prices and available packages will be listed on the Service’s purchase page.",
+            "usage": "Credits are used to generate AI content or access specific AI features within the Service. Generating different types or complexities of content may consume varying amounts of Credits, with specific consumption rates indicated before use.",
+            "noCashValue": "Credits are virtual items within the VisionY Service, have no cash value, are non-redeemable for cash, non-transferable to other users, and can only be used within the Service.",
+            "validity": "Purchased Credits may have an expiration date, which will be specified at the time of purchase or in your account. Expired Credits will be forfeited and are non-refunded or compensated.",
+            "priceChange": "We reserve the right to adjust Credit prices or consumption rates at any time. For Credits already purchased, their value and usage terms at the time of purchase remain unaffected, but new Credit purchases will be subject to the new prices."
+          }
+        },
+        "s8_3_paymentProcessing": {
+          "title": "### 8.3 Payment Processing",
+          "p1": "All payments are processed through third-party payment processors. You agree to provide valid and authorized payment information and authorize us (or our third-party payment processors) to charge all applicable fees from your designated payment method. You are responsible for ensuring your payment information is accurate and up to date."
+        },
+        "s8_4_taxes": {
+          "title": "### 8.4 Taxes",
+          "p1": "All fees exclude applicable taxes (e.g., sales tax, VAT) unless otherwise stated. You are responsible for paying all such taxes."
+        },
+        "s8_5_refundPolicy": {
+          "title": "### 8.5 Refund Policy",
+          "p1": "Unless otherwise required by applicable law or explicitly stated in specific Service offers, all paid Membership Subscription fees and Credit purchase fees are non-refunded. If we terminate your account due to your violation of these Terms, you will not be entitled to any refunds."
+        }
+      }
+    },
+    "s9_thirdParty": {
+      "title": "## 9. Third-Party Services and Links",
+      "intro": "The Service may contain links to third-party services or websites not owned by us, or integrate third-party AI models or technologies.",
+      "listItems": [
+        "We are not responsible for the content, policies, or practices of these third-party services or websites.",
+        "You acknowledge and agree that we are solely responsible for any damages or losses caused by your use of or reliance on these services or websites."
+      ]
+    },
+    "s10_disclaimer": {
+      "title": "## 10. Disclaimer",
+      "intro": "The Service is provided on an “as is” and “as available” basis without any warranties.",
+      "listItems": [
+        "The Service will be uninterrupted, timely, secure, or error-free.",
+        "The results obtained through the Service will be accurate or reliable.",
+        "The quality of any products or services obtained through the Service will meet your expectations."
+      ]
+    },
+    "s11_liabilityLimitation": {
+      "title": "## 11. Limitation of Liability",
+      "intro": "To the fullest extent permitted by applicable law, VisionY and its affiliates, officers, directors, employees, agents, partners, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of:",
+      "listItems": [
+        "Your access to or use of, or inability to access or use, the Service;",
+        "Any conduct or content of any third party (including other users or AI-generated content itself);",
+        "Any content obtained from the Service (including AI-generated content);",
+        "Unauthorized access, use, or alteration of your transmissions or content (including User Input Content and AI-Generated Content)."
+      ],
+      "p1": "This limitation applies whether the claim is based on warranty, contract, tort (including negligence), or any other legal theory, and whether or not we have been informed of the possibility of such damage, even if a remedy set forth herein is found to have failed of its essential purpose.",
+      "p2": "In no event shall VisionY’s aggregate liability arising out of or related to this Agreement exceed the total amount paid by you to the Service in the twelve (12) months preceding the event giving rise to the claim, or $100.00 USD, whichever is greater."
+    },
+    "s12_indemnification": {
+      "title": "## 12. Indemnification",
+      "intro": "You agree to indemnify and hold VisionY and its affiliates, officers, directors, employees, and agents harmless from any claims, liabilities, losses, or damages arising out of:",
+      "listItems": [
+        "Your use of the Service;",
+        "Your User Input Content;",
+        "Your violation of these Terms."
+      ]
+    },
+    "s13_termTermination": {
+      "title": "## 13. Term and Termination",
+      "intro": "These Terms are effective until terminated by either you or us.",
+      "listItems": [
+        "You may terminate these Terms at any time by discontinuing your use of the Service.",
+        "We may terminate your access to the Service at any time for any reason without notice.",
+        "Upon termination, your right to access and use the Service will cease immediately."
+      ]
+    },
+    "s14_governingLaw": {
+      "title": "## 14. Governing Law and Dispute Resolution",
+      "subsections": {
+        "s14_1_governingLaw": {
+          "title": "### 14.1 Governing Law",
+          "p1": "These Terms shall be governed by and construed in accordance with the laws of Singapore, without regard to its conflict of law principles."
+        },
+        "s14_2_informalResolution": {
+          "title": "### 14.2 Informal Resolution",
+          "p1": "Before filing a claim against us, you agree to try to resolve the dispute informally by contacting us."
+        },
+        "s14_3_arbitration": {
+          "title": "### 14.3 Arbitration",
+          "p1": "Any dispute arising from these Terms will be resolved through binding arbitration in Singapore, in accordance with the rules of the Singapore International Arbitration Centre."
+        },
+        "s14_4_classActionWaiver": {
+          "title": "### 14.4 Class Action Waiver",
+          "p1": "You agree that any arbitration or proceeding will be conducted on an individual basis and not as a class action."
+        }
+      }
+    },
+    "s15_internationalUsers": {
+      "title": "## 15. International Users",
+      "intro": "The Service is controlled and operated from Singapore.",
+      "p1": "If you choose to access the Service from outside Singapore, you do so at your own risk and are responsible for compliance with local laws."
+    },
+    "s16_termsChanges": {
+      "title": "## 16. Changes to Terms",
+      "intro": "We may revise these Terms at any time.",
+      "listItems": [
+        "We will notify you of material changes to these Terms at least 30 days before they take effect.",
+        "Your continued use of the Service after the new Terms take effect constitutes your agreement to the new Terms."
+      ]
+    },
+    "s17_generalTerms": {
+      "title": "## 17. General Terms",
+      "intro": "These Terms constitute the entire agreement between you and us regarding the Service.",
+      "listItems": [
+        "If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in effect.",
+        "Our failure to enforce any right or provision in these Terms will not constitute a waiver of such right or provision."
+      ]
+    },
+    "s18_contactUs": {
+      "title": "## 18. Contact Us",
+      "intro": "For any questions about these Terms, please contact us at:",
+      "contactInfo": [
+        "VisionY Team",
+        "Email: contact@visiony.ai"
+      ]
+    },
+    "s19_finalAgreement": {
+      "title": "## 19. Final Agreement",
+      "p1": "**By using this Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use.**"
+    }
+  }
+}

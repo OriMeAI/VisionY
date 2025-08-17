@@ -1,0 +1,39 @@
+.storyboardX {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.rightSide {
+  /* position: absolute; */
+  display: flex;
+  justify-content: center;
+  z-index: 8;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  right: 0;
+  top: -4px;
+}
+.inner {
+  width: 200px;
+  background: #fff;
+  /* border-radius: 4px; */
+  overflow: hidden;
+  margin-top: 3px;
+  margin-left: 24px;
+}
+.synthesisHistory {
+  height: calc(var(--history-height)); 
+  /* 与DrawPanel容器高度一致 */
+  overflow-y: auto; /* 允许滚动，SimpleBar会接管这个行为 */
+  max-height: 100%; /* 确保内容超出时可以滚动 */
+}
+
+.synthesisHistory :global .ant-image .ant-image-mask {
+  background-color: transparent !important;
+}
+
+.customTabs :global(.ant-tabs-nav) {
+  margin-bottom: 0 !important;
+}

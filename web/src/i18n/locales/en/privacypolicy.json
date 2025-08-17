@@ -1,0 +1,185 @@
+{
+  "documentTitle": "VisionY Privacy Policy",
+  "pageTitle": "# VisionY Privacy Policy",
+  "lastUpdated": "**Last Updated: June 1, 2025**",
+  "introduction": {
+    "p1": "VisionY ('we,' 'our,' or 'the Service') is committed to protecting your personal information and privacy rights. This Privacy Policy explains how we collect, use, disclose, and protect your information when you visit our website or use our products (collectively, 'Services').",
+    "p2": "Please read this Privacy Policy carefully. If you do not agree with the terms of this Privacy Policy, please do not access or use the Services.",
+    "p3": "Our vision is: 'AI Makes Creativity Visible.' To achieve this vision, we may need to process certain information about you."
+  },
+  "sections": {
+    "s1_collectedInfo": {
+      "title": "## 1. Information We Collect",
+      "intro": "We may collect your information in various ways:",
+      "subsections": {
+        "s1_1_directInfo": {
+          "title": "### 1.1 Information You Provide Directly to Us",
+          "listItems": [
+            "**Account Information:** When you register for a VisionY account, we may collect your name, email address, username, password (which will be hashed), and other information you choose to provide.",
+            "**User Input Content:** Any information you upload or input to use the Service’s AI features, including text prompts, images used for training or guiding AI, and other creative materials ('User Input Content').",
+            "**Communication Information:** If you contact us (e.g., via email for customer support), we collect your contact details and the information included in your communication.",
+            "**Payment Information:** If you subscribe to paid services, our third-party payment processors may collect your payment information. We do not directly store complete credit card numbers."
+          ]
+        },
+        "s1_2_autoInfo": {
+          "title": "### 1.2 Information We Collect Automatically",
+          "listItems": [
+            "**Usage Data:** We automatically collect information about how you interact with the Services, such as the pages you visit, features used, time and date of actions, frequency, and other activities.",
+            "**Device Information:** We collect information about the computer or mobile device you use to access the Services, including IP address, hardware model, operating system, browser type, and unique device identifiers.",
+            "**Cookies and Similar Technologies:** We use Cookies and similar tracking technologies (e.g., web beacons and pixels) to access or store information to operate and improve the Services and personalize your experience. You can control your browser’s use of Cookies."
+          ]
+        },
+        "s1_3_thirdPartyInfo": {
+          "title": "### 1.3 Information We Collect from Third Parties",
+          "p1": "We may receive information about you from third-party services (e.g., analytics providers), but this is typically aggregated or anonymized and used to understand how our Services are used."
+        }
+      }
+    },
+    "s2_howWeUseInfo": {
+      "title": "## 2. How We Use Your Information",
+      "intro": "We use the collected information for the following purposes:",
+      "listItems": [
+        "**Provide and Maintain the Services:** Create and manage your account, process your projects, and provide the features you request, including generating AI content based on your User Input Content.",
+        "**Improve and Personalize the Services:** Understand user behavior to enhance our user interface, features, and AI models. Personalize your experience based on your preferences and usage history.",
+        "**AI Model Training and Improvement:** Your User Input Content (particularly text prompts and feedback used for script generation) may be used to train and improve our AI models to better achieve the vision of 'AI Makes Creativity Visible.' We strive to anonymize or aggregate data before using it for training or provide opt-out options where possible. We will not use your final content generated through the Services ('AI-Generated Content,' as defined in Section 4 below) to train our AI models unless we obtain your explicit consent or permission.",
+        "**Communications:** Send you administrative information, updates, security alerts, and support messages related to the Services. With your consent, send you marketing communications.",
+        "**Process Payments:** Handle your subscriptions and service purchases.",
+        "**Security and Compliance:** Protect our Services and users from fraud, abuse, and security incidents, and comply with applicable laws and regulations.",
+        "**Enforce Our Terms:** Enforce our Terms of Service and other policies."
+      ]
+    },
+    "s3_howWeShareInfo": {
+      "title": "## 3. How We Share Your Information",
+      "intro": "We do not sell your personal information to third parties. We may share your information in the following circumstances:",
+      "listItems": [
+        "**Service Providers:** We may share your information with third-party service providers acting on our behalf, such as cloud hosting (e.g., AWS, Azure, Google Cloud), data analytics, payment processing, customer support, and email services. These providers are authorized to use your information only to provide services to us.",
+        "**Legal Requirements and Business Transfers:**",
+        "  * We may disclose your information if we believe in good faith that disclosure is necessary to comply with legal obligations (e.g., subpoenas or court orders), protect our rights and property, prevent fraud or illegal activity, or protect the safety of users or the public.",
+        "  * In the event of a merger, acquisition, reorganization, bankruptcy, or sale of all or part of our assets, your information may be transferred as part of the transaction.",
+        "**AI Model Partners:** If we use third-party AI models or technologies to provide certain Service features, we may need to share certain data (e.g., text prompts in your User Input Content) with these partners to obtain AI-generated results. We ensure such sharing complies with privacy protection requirements.",
+        "**With Your Consent:** We may share your information with third parties with your explicit consent.",
+        "**Aggregated or Anonymized Data:** We may share aggregated or anonymized information that does not identify you personally for research, analytics, industry reports, or similar purposes."
+      ]
+    },
+    "s4_aiContentRights": {
+      "title": "## 4. Rights and Responsibilities for AI-Generated Content",
+      "intro": "The Services use AI technology to assist you in creating content.",
+      "points": {
+        "attribution": "**Content Ownership:** Between you and VisionY, the specific content you generate through the VisionY Services (based on your legitimate User Input Content), including but not limited to AI-generated text, images, videos, and audio ('AI-Generated Content'), belongs to you in terms of related intellectual property rights (to the extent permitted by applicable law). VisionY does not claim ownership of the AI-Generated Content you create through the Services.",
+        "yourResponsibility": {
+          "title": "**Your Responsibilities:**",
+          "listItems": [
+            "You are fully responsible for your User Input Content and the AI-Generated Content derived from it.",
+            "You must ensure that your User Input Content and AI-Generated Content do not infringe on any third-party rights (including but not limited to copyright, trademark, patent, publicity, privacy, or trade secrets) and do not contain defamatory, discriminatory, obscene, violent, or otherwise illegal or inappropriate content.",
+            "You understand and agree that AI-Generated Content may not be entirely original and may be influenced by training data. You are responsible for reviewing and ensuring its suitability and compliance.",
+            "Any legal disputes, claims, penalties, or losses arising from your User Input Content or AI-Generated Content are your sole responsibility to address and resolve. VisionY bears no liability for these and reserves the right to seek recourse from you if necessary."
+          ]
+        },
+        "visionyLicense": "**VisionY’s Limited License:** You grant VisionY a limited, non-exclusive, worldwide, royalty-free license to use, reproduce, distribute, modify (e.g., to adapt to display formats), and display your AI-Generated Content solely for the purpose of providing, maintaining, improving, and promoting the Services (e.g., showcasing your work as an example with your consent). This license terminates when you delete your AI-Generated Content or terminate your account, though backups retained for operational needs may persist for a reasonable period."
+      }
+    },
+    "s5_cookies": {
+      "title": "## 5. Cookies and Similar Technologies",
+      "intro": "We use Cookies and similar technologies to:",
+      "listItems": [
+        "Ensure the proper functioning of the Services.",
+        "Remember your preferences and settings.",
+        "Analyze website traffic and trends.",
+        "Evaluate the effectiveness of marketing campaigns."
+      ],
+      "p1": "Most browsers allow you to control Cookies, including whether to accept them and how to remove them. Disabling Cookies may cause some features of the Services to function improperly."
+    },
+    "s6_dataSecurity": {
+      "title": "## 6. Data Security",
+      "p1": "We implement commercially reasonable administrative, technical, and physical measures to protect your personal information from unauthorized access, use, alteration, or disclosure. However, no method of transmission over the internet or electronic storage is 100% secure. Therefore, we cannot guarantee absolute security."
+    },
+    "s7_dataRetention": {
+      "title": "## 7. Data Retention",
+      "p1": "We will retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law (e.g., for tax, accounting, or other legal requirements). When your account is deleted or deactivated, we will delete or anonymize your personal information and User Input Content within a reasonable time, unless we need to retain certain information to comply with legal obligations, resolve disputes, or enforce our agreements. Your AI-Generated Content will be handled according to your instructions or account status."
+    },
+    "s8_yourRights": {
+      "title": "## 8. Your Rights and Choices",
+      "intro": "Depending on your jurisdiction, you may have the following rights regarding your personal information:",
+      "listItems": [
+        "**Right to Access:** Request access to the personal information we hold about you.",
+        "**Right to Rectification:** Request correction of inaccurate or incomplete personal information.",
+        "**Right to Deletion (Right to Be Forgotten):** Request deletion of your personal information in certain circumstances.",
+        "**Right to Restrict Processing:** Request restriction of our processing of your personal information in certain circumstances.",
+        "**Right to Data Portability:** Request to receive your personal information in a structured, commonly used, and machine-readable format and, where technically feasible, have it transferred to another controller.",
+        "**Right to Object:** Object to our processing of your personal information based on legitimate interests or for direct marketing purposes.",
+        "**Right to Withdraw Consent:** If we process your personal information based on your consent, you may withdraw your consent at any time.",
+        "**Right to Complain:** You have the right to lodge a complaint with the data protection authority in your jurisdiction."
+      ],
+      "p1": "To exercise these rights, please contact us at `contact@visiony.ai`. We may require you to verify your identity before responding to your request."
+    },
+    "s9_internationalTransfers": {
+      "title": "## 9. International Data Transfers",
+      "p1": "VisionY operates globally, which means your personal information may be transferred to and processed in countries outside your country of residence, where data protection laws may differ from those in your country.",
+      "p2": "We will take appropriate safeguards to ensure your personal information is adequately protected during transfers, such as using standard contractual clauses (e.g., those approved by the European Commission), relying on other legally recognized transfer mechanisms, or ensuring the recipient is located in a country deemed to have adequate data protection levels."
+    },
+    "s10_childrensPrivacy": {
+      "title": "## 10. Children’s Privacy",
+      "p1": "The Services are not intended for children under 13 years of age (or a higher age as specified in your jurisdiction, such as 16 in the EU). We do not knowingly collect personal information from children under this age. If we discover that we have collected personal information from a child, we will take steps to delete it as soon as possible. If you believe we may have collected information from a child, please contact us at `contact@visiony.ai`."
+    },
+    "s11_regionSpecific": {
+      "title": "## 11. Region-Specific Provisions",
+      "intro": "**In addition to the general provisions of this Privacy Policy, if you are located in the following specific jurisdictions, the following terms may also apply to you. We strive to comply with all applicable local data protection laws.**",
+      "subsections": {
+        "s11_1_eeaUkSwitzerland": {
+          "title": "### 11.1 European Economic Area (EEA), United Kingdom (UK), and Switzerland Users",
+          "p1": "If you are located in the EEA, UK, or Switzerland, you have specific rights under GDPR or equivalent national laws. The legal bases for processing your personal information include:",
+          "listItems": [
+            "**Your Consent:** For certain specific purposes.",
+            "**Contract Performance:** Necessary to provide you with the Services.",
+            "**Legitimate Interests:** For example, to improve the Services, prevent fraud, and conduct marketing, provided these interests are not overridden by your data protection interests or fundamental rights and freedoms.",
+            "**Legal Obligations:** To comply with our legal responsibilities."
+          ]
+        },
+        "s11_2_california": {
+          "title": "### 11.2 California Residents (CCPA/CPRA)",
+          "p1": "If you are a California resident, you have specific rights under the CCPA/CPRA, including:",
+          "listItems": [
+            "**Right to Know:** Know the categories and specific pieces of personal information we collect, use, and share.",
+            "**Right to Delete:** Request deletion of your personal information.",
+            "**Right to Opt-Out of Sale/Sharing:** We currently do not 'sell' or 'share' (as defined by CCPA/CPRA) your personal information.",
+            "**Right to Non-Discrimination:** Not be discriminated against for exercising your CCPA/CPRA rights.",
+            "**Right to Limit Use and Disclosure of Sensitive Personal Information:** For certain sensitive personal information, you have the right to request that we use it only for providing the Services or other specific purposes permitted by law."
+          ],
+          "p2": "To exercise your California privacy rights, please contact us at `contact@visiony.ai`."
+        },
+        "s11_3_china": {
+          "title": "### 11.3 Mainland China Users (PIPL)",
+          "p1": "If you are located in Mainland China, you have specific rights under the Personal Information Protection Law (PIPL). We will process your personal information in accordance with PIPL requirements, including obtaining your separate consent (if applicable), providing information about cross-border data transfers, and ensuring you can exercise your rights."
+        },
+        "s11_4_japan": {
+          "title": "### 11.4 Japan Users (APPI)",
+          "p1": "If you are located in Japan, Japan’s Act on the Protection of Personal Information (APPI) applies to the processing of your personal information. We will process your personal information in accordance with APPI requirements. You have rights under APPI, including:",
+          "listItems": [
+            "**Right to Request Disclosure:** Request disclosure of the personal data we hold, the purpose of use, and records of provision to third parties.",
+            "**Right to Correction, Addition, or Deletion:** Request correction, addition, or deletion of inaccurate personal data.",
+            "**Right to Cease Use or Delete:** Request cessation of use or deletion of your personal data in certain circumstances.",
+            "**Specific Consent and Notification for Third-Party Provision:** We will comply with APPI requirements for providing personal information to third parties (including overseas third parties)."
+          ],
+          "p2": "We will take appropriate measures to ensure that the transfer of your personal information outside Japan complies with APPI, such as obtaining your consent or ensuring the recipient has established a personal information protection system meeting APPI standards.",
+          "p3": "To exercise your rights under Japanese law, please contact us at `contact@visiony.ai`."
+        },
+        "s11_5_otherJurisdictions": {
+          "title": "### 11.5 Other Jurisdictions",
+          "p1": "If you are located in other jurisdictions not explicitly listed above, your local laws may grant you additional rights not specifically mentioned in this Policy. We will strive to respect and facilitate these rights. If you have questions, please contact us at `contact@visiony.ai`."
+        }
+      }
+    },
+    "s12_policyChanges": {
+      "title": "## 12. Changes to This Privacy Policy",
+      "p1": "We may update this Privacy Policy from time to time. If we make material changes, we will notify you by posting the updated policy on the Services, sending you an email, or using other appropriate means. We encourage you to review this Privacy Policy periodically to stay informed about our information practices. Any changes will take effect when the updated Privacy Policy is posted."
+    },
+    "s13_contactUs": {
+      "title": "## 13. Contact Us",
+      "p1": "If you have any questions, comments, or concerns about this Privacy Policy or our privacy practices, please contact us at:",
+      "contactInfo": [
+        "VisionY Team",
+        "Email: `contact@visiony.ai`"
+      ]
+    }
+  }
+}

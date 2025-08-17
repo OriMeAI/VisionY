@@ -1,0 +1,29 @@
+/* .modalWrapper {
+  :global(.ant-modal),
+  :global(.ant-modal-content),
+  :global(.ant-modal-body) {
+    width: var(--modal-width) !important;
+    height: var(--modal-height) !important;
+  }
+} */
+
+.modalWrapper :global .ant-modal {
+  margin: 10px 70px;
+}
+
+.modalWrapper :global .ant-modal-content {
+  overflow-x: auto;
+  /* margin: 50px 0; */
+}
+.modalWrapper :global .ant-modal-footer {
+  padding: 0 !important;
+}
+
+/* 禁用遮罩层事件 */
+:global .ant-modal-root .ant-modal-mask {
+  pointer-events: none !important;
+}
+/* 确保活动层可交互 */
+/* .active-modal .ant-modal-mask {
+    pointer-events: auto;
+  } */

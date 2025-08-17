@@ -1,0 +1,4 @@
+.syncSliderInputWrapper :global .ant-slider {
+  align-items: center;
+  width: 150px;
+}

@@ -1,0 +1,15 @@
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+stroke="rgba(0, 0, 0, 0.25)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-film w-5 h-5"
+>
+  <!-- 外部圆角黑框 -->
+  <rect x="2" y="2" width="20" height="20" rx="2.66"/>
+  
+  <!-- 内部白色区域 -->
+  <!-- <rect x="5.33" y="5.33" width="13.33" height="13.33" rx="1.33"/> -->
+
+  <!-- 内部黑色小正方形 -->
+  <rect x="8.67" y="8.67" width="6.67" height="6.67" rx="0.67"/>
+
+  <!-- 小圆点 -->
+  <!-- <circle cx="16.44" cy="7.56" r="1.33"/> -->
+</svg>
