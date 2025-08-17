@@ -1,3 +1,24 @@
+# VisionY Project Introduction
+
+As an experienced system architect, I'll provide you with a detailed introduction to the VisionY project. From the code structure and functional modules, this is quite an ambitious AI-driven storyboard generation platform.
+
+## Project Overview
+
+VisionY is a professional AI-based storyboard generation platform with the core philosophy of "AI Makes Creativity Visible". The platform can convert scripts into professional storyboards with one click, unleashing creators' creative potential.
+
+## Core Features
+
+### 1. Intelligent Script Analysis & Storyboard Generation
+- **One-Click Conversion**: Supports multiple text format inputs or direct pasting, easily importing your creative blueprint
+- **AI Engine Analysis**: Powerful AI engine quickly analyzes, breaks down, and generates initial storyboards with detailed parameters
+- **Professional Annotation**: Automatically annotates each storyboard with shot type, camera angle, movement, and duration suggestions, meeting professional standards
+
+### 2. Visual Editing Mode
+- **WYSIWYG Interface**: Brand-new visual mode offers an unprecedented storyboard browsing and editing experience
+- **Precise Adjustment**: Easily tweak AI-generated image descriptions and shot parameters
+- **Multi-Format Export**: Supports multiple common format exports, seamlessly integrating into your workflow
+        
+
 # VisionY Deployment Guide
 
 ## 1. Modify Environment Configuration Files
