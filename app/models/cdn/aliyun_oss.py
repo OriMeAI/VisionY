@@ -32,7 +32,7 @@ class AliyunOss:
         self.secret_key = os.environ.get("ALIYUN_SECRET_KEY", "")
         self.bucket_name = os.environ.get("ALIYUN_OSS_BUCKET_NAME", "")
         self.endpoint = os.environ.get("ALIYUN_OSS_ENDPOINT", "")
-        self.resource_base_url = "https://resource.visiony.cc"
+        self.resource_base_url = os.environ.get("ALIYUN_OSS_RESOURCE_BASE_URL", "")
         
         # logging.info(f"初始化腾讯云COS客户端，secret_id: {self.secret_id}, secret_key: {self.secret_key}, bucket_name: {self.bucket_name}, region: {self.region}")
         
