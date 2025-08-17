@@ -21,7 +21,7 @@ const RoleItem: React.FC<IProps> = ({ roleItem, roleIndex }: IProps) => {
   const onRoleItemClick = () => {
     roleViewContexts.setCheckedRoleItemIndex(roleIndex);
   };
-  console.log("roleViewContexts", roleViewContexts.roleList[roleViewContexts.checkedRoleItemIndex],  roleItem.roleId);
+  // console.log("roleViewContexts", roleViewContexts.roleList[roleViewContexts.checkedRoleItemIndex],  roleItem.roleId);
   return (
     <li onClick={onRoleItemClick}>
       <div className="w-[152px] h-[270px] relative flex flex-col items-center cursor-pointer rounded-lg bg-background overflow-hidden justify-center">

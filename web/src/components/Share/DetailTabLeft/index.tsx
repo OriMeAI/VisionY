@@ -36,6 +36,7 @@ const DetailTabLeft: React.FC<IProps> = ({
 }: IProps) => {
   const { t } = useTranslation();
 
+  console.log("currSegment", currSegment);
 
   const onSegmentedChange = (value: DetailTabType | string) => {
     if (typeof value === "string") {
@@ -43,17 +44,17 @@ const DetailTabLeft: React.FC<IProps> = ({
     }
     setCurrSegment(value);
     // Store in sessionStorage with project id as key
-    if (templateProjectItem?.id) {
-      sessionStorage.setItem(`selectedTab_${templateProjectItem.id}`, value.toString());
-    }
+    // if (templateProjectItem?.id) {
+    //   sessionStorage.setItem(`selectedTab_${templateProjectItem.id}`, value.toString());
+    // }
   };
   // 根据 TAB_LINK_MAPS[currSegment] 的值设置 body 的背景颜色
-  React.useEffect(() => {
-    document.body.style.backgroundColor =
-      LINK_BG_COLOR_MAPS[
-        TAB_LINK_MAPS_NEW[currSegment] as keyof typeof LINK_BG_COLOR_MAPS
-      ];
-  }, [currSegment]);
+  // React.useEffect(() => {
+  //   document.body.style.backgroundColor =
+  //     LINK_BG_COLOR_MAPS[
+  //       TAB_LINK_MAPS_NEW[currSegment] as keyof typeof LINK_BG_COLOR_MAPS
+  //     ];
+  // }, [currSegment]);
   const [isNarrowScreen, setIsNarrowScreen] = useState<boolean>(drawHelper.getWinW() > 0 && drawHelper.getWinW() < 980);
 
   // 添加窗口大小变化监听

@@ -33,22 +33,24 @@ const DetailTabRight: React.FC<IProps> = ({
 }: IProps) => {
   const { t } = useTranslation();
 
+  console.log("currSegment", currSegment);
+
   const onSegmentedChange = (value: DetailTabType | string) => {
     if (typeof value === "string") {
       return;
     }
     setCurrSegment(value);
     // Store in sessionStorage with project id as key
-    if (templateProjectItem?.id) {
-      sessionStorage.setItem(`selectedTab_${templateProjectItem.id}`, value.toString());
-    }
+    // if (templateProjectItem?.id) {
+    //   sessionStorage.setItem(`selectedTab_${templateProjectItem.id}`, value.toString());
+    // }
   };
-  React.useEffect(() => {
-    document.body.style.backgroundColor =
-      LINK_BG_COLOR_MAPS[
-        TAB_LINK_MAPS_NEW[currSegment] as keyof typeof LINK_BG_COLOR_MAPS
-      ];
-  }, [currSegment]);
+  // React.useEffect(() => {
+  //   document.body.style.backgroundColor =
+  //     LINK_BG_COLOR_MAPS[
+  //       TAB_LINK_MAPS_NEW[currSegment] as keyof typeof LINK_BG_COLOR_MAPS
+  //     ];
+  // }, [currSegment]);
   // 根据leftWidth决定使用Segmented还是Select组件
 
   const [isNarrowScreen, setIsNarrowScreen] = useState<boolean>(drawHelper.getWinW() > 0 && drawHelper.getWinW() < 980);

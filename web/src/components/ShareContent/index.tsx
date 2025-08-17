@@ -21,9 +21,7 @@ const Share: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const pathId = window.location.pathname.split("/").filter(Boolean)[1] || id;
   const [currSegment, setCurrSegment] = React.useState<DetailTabType | null>(DetailTabType.VisualView);
-  const [templateProjectItem, setTemplateProjectItem] = React.useState<
-    ProjectItemObj | undefined
-  >();
+  const [templateProjectItem, setTemplateProjectItem] = React.useState<ProjectItemObj | undefined>();
   // Initialize from sessionStorage on mount
   // useEffect(() => {
   //   if (templateProjectItem?.id) {
