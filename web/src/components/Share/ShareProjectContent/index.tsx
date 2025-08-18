@@ -25,12 +25,6 @@ const ShareProjectContent: React.FC<IProps> = ({
   currSegment,
   templateProjectItem,
 }: IProps) => {
-  // 从URL路径中获取ID参数，例如从/share/10011/new中提取10011
-  // const { id } = useParams<{ id: string }>();
-
-  // // 修改提取pathId的方式，确保能从/share/10011/new格式中提取到10011
-  // const pathSegments = window.location.pathname.split("/").filter(Boolean);
-  // const pathId = pathSegments.length >= 2 ? pathSegments[1] : id;
 
   const [projectId, setProjectId] = React.useState<string>();
   const [templateShootTableData, setTemplateShootTableData] = React.useState<StoryboardShot[]>();
@@ -60,7 +54,7 @@ useEffect(() => {
       {currSegment === DetailTabType.Script && templateProjectItem ? (
         <ProjectInfo content={templateProjectItem?.content} />
       ) : null}
-      {currSegment === DetailTabType.Role && templateProjectItem ? (
+      {currSegment === DetailTabType.Role && roleList ? (
         <Suspense
           fallback={
             <div className="flex items-center justify-center h-full">
@@ -87,7 +81,7 @@ useEffect(() => {
           <TableView tableData={templateShootTableData} isNew={true} />
         </Suspense>
       ) : null}
-      {currSegment === DetailTabType.Storyboard && templateProjectItem ? (
+      {currSegment === DetailTabType.Storyboard && templateShootTableData ? (
         <Suspense
           fallback={
             <div className="flex items-center justify-center h-full">
@@ -98,7 +92,7 @@ useEffect(() => {
           <BoardView tableData={templateShootTableData} isNew={true} />
         </Suspense>
       ) : null}
-      {currSegment === DetailTabType.VisualView && templateProjectItem ? (
+      {currSegment === DetailTabType.VisualView && templateShootTableData ? (
         <Suspense
           fallback={
             <div className="flex items-center justify-center h-full">

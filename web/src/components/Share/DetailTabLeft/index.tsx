@@ -34,8 +34,6 @@ const DetailTabLeft: React.FC<IProps> = ({
 }: IProps) => {
   const { t } = useTranslation();
 
-  console.log("currSegment", currSegment);
-
   const onSegmentedChange = (value: DetailTabType | string) => {
     if (typeof value === "string") {
       return;

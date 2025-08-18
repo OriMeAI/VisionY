@@ -33,10 +33,10 @@ const Share: React.FC = () => {
     (async () => {
       // 从URL路径中获取ID参数，例如从/share/10011中提取10011
       const pathId = window.location.pathname.split("/").filter(Boolean)[1];
-      console.log('pathId', pathId)
+      // console.log('pathId', pathId)
       if (pathId) {
         const data = await shareApi.getTemplateById(pathId);
-        console.log('data', data)
+        // console.log('data', data)
         setTemplateProjectItem(data.result?.data);
       }
     })();

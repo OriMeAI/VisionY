@@ -27,12 +27,6 @@ const ShareDetailContainer: React.FC<IProps> = ({
   projectName,
 }: IProps) => {
   const { t } = useTranslation();
-  const userContexts: IUserContexts =
-    React.useContext<IUserContexts>(UserContexts);
-  const pathname = location.pathname;
-  // 获取路由片段信息
-  const routeSegments = pathname.split("/");
-  let lastSegment = routeSegments[routeSegments.length - 1];
 
   return (
     <div className="overflow-hidden">
