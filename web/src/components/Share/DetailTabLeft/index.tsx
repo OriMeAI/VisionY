@@ -26,13 +26,11 @@ export const LINK_TAB_MAPS_NEW = {
 interface IProps {
   currSegment: DetailTabType;
   setCurrSegment: React.Dispatch<React.SetStateAction<DetailTabType>>;
-  templateProjectItem: ProjectItemObj | undefined;
 }
 
 const DetailTabLeft: React.FC<IProps> = ({
   currSegment,
   setCurrSegment,
-  templateProjectItem,
 }: IProps) => {
   const { t } = useTranslation();
 

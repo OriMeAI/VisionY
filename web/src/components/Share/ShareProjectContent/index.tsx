@@ -18,7 +18,7 @@ const VisualMode = lazy(() => import("../VisualMode"));
 
 interface IProps {
   currSegment: DetailTabType;
-  templateProjectItem: ProjectItemObj | undefined;
+  templateProjectItem: ProjectItemObj;
 }
 
 const ShareProjectContent: React.FC<IProps> = ({
@@ -26,31 +26,35 @@ const ShareProjectContent: React.FC<IProps> = ({
   templateProjectItem,
 }: IProps) => {
   // 从URL路径中获取ID参数，例如从/share/10011/new中提取10011
-  const { id } = useParams<{ id: string }>();
+  // const { id } = useParams<{ id: string }>();
 
-  // 修改提取pathId的方式，确保能从/share/10011/new格式中提取到10011
-  const pathSegments = window.location.pathname.split("/").filter(Boolean);
-  const pathId = pathSegments.length >= 2 ? pathSegments[1] : id;
+  // // 修改提取pathId的方式，确保能从/share/10011/new格式中提取到10011
+  // const pathSegments = window.location.pathname.split("/").filter(Boolean);
+  // const pathId = pathSegments.length >= 2 ? pathSegments[1] : id;
 
-  const [templateShootTableData, setTemplateShootTableData] =
-    React.useState<StoryboardShot[]>();
-
+  const [projectId, setProjectId] = React.useState<string>();
+  const [templateShootTableData, setTemplateShootTableData] = React.useState<StoryboardShot[]>();
   const [roleList, setRoleList] = React.useState<RoleItemObj[]>([]);
 
-  // 获取案例角色
-  useEffect(() => {
-    (async () => {
-      const data = await shareApi.getTemplateRoleById(pathId);
-      setRoleList(data.result?.data);
-    })();
-  }, [pathId]);
-  // 获取案例展示预览表格数据
-  useEffect(() => {
-    (async () => {
-      const data = await shareApi.getTemplateShootById(pathId);
-      setTemplateShootTableData(data.result?.data);
-    })();
-  }, [pathId]);
+useEffect(() => {
+  if (!templateProjectItem?.id) return;
+  
+  const loadData = async () => {
+    const projectId = templateProjectItem.id;
+    setProjectId(projectId);
+    
+    const [roleData, shotData] = await Promise.all([
+      shareApi.getTemplateRoleById(projectId),
+      shareApi.getTemplateShootById(projectId)
+    ]);
+    
+    setRoleList(roleData.result?.data);
+    setTemplateShootTableData(shotData.result?.data);
+  };
+  
+  loadData();
+}, [templateProjectItem?.id]);
+
   return (
     <>
       {currSegment === DetailTabType.Script && templateProjectItem ? (
@@ -65,7 +69,7 @@ const ShareProjectContent: React.FC<IProps> = ({
           }
         >
           <RoleView
-            id={pathId}
+            id={projectId}
             roleList={roleList}
             setRoleList={setRoleList}
             isNew={true}

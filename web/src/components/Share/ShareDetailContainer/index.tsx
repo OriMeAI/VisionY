@@ -16,17 +16,15 @@ import { IUserContexts, UserContexts } from "./../../../contexts/user-contexts";
 interface IProps {
   currSegment: DetailTabType;
   setCurrSegment: React.Dispatch<React.SetStateAction<DetailTabType>>;
-  projectId: string; // 项目id
   children: React.ReactNode;
-  templateProjectItem: ProjectItemObj | undefined;
+  projectName: string;
 }
 
 const ShareDetailContainer: React.FC<IProps> = ({
   currSegment,
   setCurrSegment,
-  projectId,
   children,
-  templateProjectItem,
+  projectName,
 }: IProps) => {
   const { t } = useTranslation();
   const userContexts: IUserContexts =
@@ -54,7 +52,7 @@ const ShareDetailContainer: React.FC<IProps> = ({
           </div>
 
           <div className="truncate max-w-[200px] ml-2 text-lg font-semibold">
-            {templateProjectItem?.name}
+            {projectName}
           </div>
           {/* <DetailTab projectId={projectId} /> */}
           <div className="flex items-center space-x-6">
@@ -84,12 +82,10 @@ const ShareDetailContainer: React.FC<IProps> = ({
               <DetailTabLeft
                 currSegment={currSegment}
                 setCurrSegment={setCurrSegment}
-                templateProjectItem={templateProjectItem}
               />
               <DetailTabRight
                 currSegment={currSegment}
                 setCurrSegment={setCurrSegment}
-                templateProjectItem={templateProjectItem}
               />
             </div>
           </div>
