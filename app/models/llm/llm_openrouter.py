@@ -77,7 +77,7 @@ class LLMOpenRouter:
         
         logging.info(f"Initialized OpenRouter LLMModel, LLM Model is: {self.model}")
               
-    async def generate_content(self, messages, temperature = 1.0, is_json=False, used_type = "parse_script"):
+    async def generate_content(self, messages, temperature = 0.5, is_json=False, used_type = "parse_script"):
         """
         异步标准生成
         
@@ -167,7 +167,7 @@ class LLMOpenRouter:
                 logging.warning(f"LLMOpenRouter generate_content attempt {attempt + 1} for task , retrying...")
                 await asyncio.sleep(2 ** attempt)  # 指数退避
                             
-    async def generate_stream(self, messages, temperature=1.0, is_json=False, used_type = "expand_write"):
+    async def generate_stream(self, messages, temperature=0.5, is_json=False, used_type = "expand_write"):
         """
         异步流式生成 - 修复UTF-8解码问题
         
